@@ -510,3 +510,24 @@ h2 {
   .slip { transition: transform 0.4s ease; }
   .slip:hover { transform: rotate(0deg); }
 }
+
+/* ---------- password reset / email confirmed ---------- */
+.auth-box { max-width: 28rem; }
+.auth-box form { display: grid; gap: 8px; margin-top: 8px; }
+.auth-box label { font-weight: 600; font-size: var(--step--1); margin-top: 8px; }
+.pw-row { display: flex; gap: 8px; }
+.pw-row input {
+  flex: 1; min-width: 0; font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+.pw-row input:focus { outline: 2px solid var(--signal); outline-offset: 1px; }
+.pw-toggle {
+  font: inherit; font-size: var(--step--1); font-weight: 600; color: var(--ink); background: none;
+  border: 1px solid var(--line); border-radius: 10px; padding: 0 14px; cursor: pointer;
+}
+.auth-box .btn { margin-top: 12px; justify-self: start; cursor: pointer; }
+.auth-box .btn:disabled { opacity: 0.6; cursor: default; }
+.auth-hint { margin: 2px 0 0; font-size: var(--step--1); color: var(--muted); }
+.auth-msg { font-weight: 600; }
+.auth-err { color: #e5484d; }
+.auth-ok, .auth-okt { color: var(--good); }

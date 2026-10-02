@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ny adgangskode · TaxaBog</title>
+<meta name="description" content="Vælg en ny adgangskode til TaxaBog.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#111316" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef0f2" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316191d'/%3E%3Crect x='6' y='9' width='20' height='6' rx='2' fill='%23ffb800'/%3E%3Crect x='6' y='18' width='20' height='3' rx='1.5' fill='%23eef0f2'/%3E%3Crect x='6' y='23' width='13' height='3' rx='1.5' fill='%23eef0f2'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">
+      <span class="brand-mark">TaxaBog</span>
+      <span class="brand-sub">af EgyDan ApS</span>
+    </a>
+    <nav class="nav" aria-label="Hovedmenu">
+      <a href="../#taxabog">TaxaBog</a>
+      <a href="../#koerselstid">Kørselstid</a>
+      <a href="../#om">Om os</a>
+      <a href="../#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap">
+    <div class="prose auth-box">
+      <h1>Ny adgangskode</h1>
+      <div id="state-loading"><p>Kontrollerer linket…</p></div>
+      <div id="state-bad" hidden>
+        <p class="auth-msg auth-err" id="bad-text">Linket er ugyldigt eller udløbet.</p>
+        <p>Åbn TaxaBog-appen, tryk <strong>Har du glemt adgangskoden?</strong> og bed om et nyt link. Linket virker kun én gang og i en begrænset tid.</p>
+      </div>
+      <form id="state-form" hidden novalidate>
+        <p>Vælg en ny adgangskode til din TaxaBog-konto.</p>
+        <label for="pw1">Ny adgangskode</label>
+        <div class="pw-row"><input id="pw1" type="password" autocomplete="new-password" minlength="6" required><button type="button" class="pw-toggle" data-for="pw1">Vis</button></div>
+        <label for="pw2">Gentag adgangskode</label>
+        <div class="pw-row"><input id="pw2" type="password" autocomplete="new-password" minlength="6" required><button type="button" class="pw-toggle" data-for="pw2">Vis</button></div>
+        <p class="auth-hint" id="hint">Mindst 6 tegn.</p>
+        <button class="btn btn-primary" type="submit" id="save">Gem adgangskode</button>
+        <p class="auth-msg auth-err" id="form-err" hidden></p>
+      </form>
+      <div id="state-done" hidden>
+        <p class="auth-msg auth-ok">Din adgangskode er ændret.</p>
+        <p>Åbn TaxaBog-appen og log ind med din email og den nye adgangskode.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.78.0/dist/umd/supabase.js"></script>
+<script>
+(function () {
+  var SUPABASE_URL = 'https://zcvayaoyhrnzhvocmuuq.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpjdmF5YW95aHJuemh2b2NtdXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2MDU3NDcsImV4cCI6MjA5MjE4MTc0N30.DeIiHP8IMQeMPivpT22zpX4pSHP-TxBM_18WiCfCE_w';
+  function show(id) {
+    ['state-loading', 'state-bad', 'state-form', 'state-done'].forEach(function (s) {
+      document.getElementById(s).hidden = (s !== id);
+    });
+  }
+  var params = new URLSearchParams(location.hash.slice(1) || location.search.slice(1));
+  if (params.get('error')) {
+    if (params.get('error_code') === 'otp_expired') document.getElementById('bad-text').textContent = 'Linket er udløbet.';
+    show('state-bad'); return;
+  }
+  if (!window.supabase) {
+    document.getElementById('bad-text').textContent = 'Siden kunne ikke indlæses. Tjek din internetforbindelse og åbn linket igen.';
+    show('state-bad'); return;
+  }
+  var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { detectSessionInUrl: true, persistSession: false, autoRefreshToken: false }
+  });
+  var ready = false;
+  client.auth.onAuthStateChange(function (event, session) {
+    if (session && !ready) { ready = true; history.replaceState(null, '', location.pathname); show('state-form'); }
+  });
+  setTimeout(function () {
+    if (ready) return;
+    client.auth.getSession().then(function (r) {
+      if (r.data && r.data.session) { ready = true; history.replaceState(null, '', location.pathname); show('state-form'); }
+      else show('state-bad');
+    });
+  }, 1500);
+
+  document.querySelectorAll('.pw-toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var i = document.getElementById(b.dataset.for);
+      var hidden = i.type === 'password'; i.type = hidden ? 'text' : 'password'; b.textContent = hidden ? 'Skjul' : 'Vis';
+    });
+  });
+  var pw1 = document.getElementById('pw1'), pw2 = document.getElementById('pw2'), hint = document.getElementById('hint');
+  function check() {
+    if (pw1.value.length && pw1.value.length < 6) { hint.textContent = 'Adgangskoden skal være mindst 6 tegn.'; hint.className = 'auth-hint auth-err'; return false; }
+    if (pw2.value.length && pw1.value !== pw2.value) { hint.textContent = 'Adgangskoderne matcher ikke.'; hint.className = 'auth-hint auth-err'; return false; }
+    if (pw1.value.length >= 6 && pw1.value === pw2.value) { hint.textContent = '✓ Adgangskoderne matcher'; hint.className = 'auth-hint auth-okt'; return true; }
+    hint.textContent = 'Mindst 6 tegn.'; hint.className = 'auth-hint'; return false;
+  }
+  pw1.addEventListener('input', check); pw2.addEventListener('input', check);
+  document.getElementById('state-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var err = document.getElementById('form-err'); err.hidden = true;
+    if (!check()) { err.textContent = 'Udfyld begge felter med den samme adgangskode på mindst 6 tegn.'; err.hidden = false; return; }
+    var btn = document.getElementById('save'); btn.disabled = true; btn.textContent = 'Gemmer…';
+    client.auth.updateUser({ password: pw1.value }).then(function (r) {
+      if (r.error) {
+        var m = r.error.message || '';
+        err.textContent = /different from the old/i.test(m) ? 'Den nye adgangskode skal være forskellig fra den gamle.'
+          : /weak|characters/i.test(m) ? 'Adgangskoden er for svag. Vælg en længere adgangskode.'
+          : 'Adgangskoden kunne ikke gemmes. Bed om et nyt link i appen og prøv igen.';
+        err.hidden = false; btn.disabled = false; btn.textContent = 'Gem adgangskode'; return;
+      }
+      client.auth.signOut();
+      show('state-done');
+    });
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 EgyDan ApS · CVR 46090942 · Danmark</span>
+    <nav aria-label="Juridisk">
+      <a href="../privatlivspolitik/">Privatlivspolitik</a>
+      <a href="../vilkaar/">Vilkår</a>
+      <a href="mailto:support@egydan.com">support@egydan.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
