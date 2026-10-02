@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TaxaBog · Vagtregnskab og kørselstid for taxa og flextrafik</title>
+<meta name="description" content="TaxaBog er en gratis app til vagtregnskab og GPS-kørselstid for taxa- og flextrafikførere. Udviklet af EgyDan ApS.">
+<meta name="theme-color" content="#111316" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef0f2" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316191d'/%3E%3Crect x='6' y='9' width='20' height='6' rx='2' fill='%23ffb800'/%3E%3Crect x='6' y='18' width='20' height='3' rx='1.5' fill='%23eef0f2'/%3E%3Crect x='6' y='23' width='13' height='3' rx='1.5' fill='%23eef0f2'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="">
+      <span class="brand-mark">TaxaBog</span>
+      <span class="brand-sub">af EgyDan ApS</span>
+    </a>
+    <nav class="nav" aria-label="Hovedmenu">
+      <a href="#taxabog">Funktioner</a>
+      <a href="#koerselstid">Kørselstid</a>
+      <a href="#om">Om os</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Til taxa- og flextrafikførere</p>
+      <h1>Hold styr på vagten. Få betalt for <span class="hl">ventetiden</span>.</h1>
+      <p class="lead">TaxaBog er en gratis app til vagtregnskab og kørselstid. Den henter bilens GPS
+      under vagten og viser, hvor meget af din tid der var arbejde, pause og ventetid ved adresserne.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:support@egydan.com?subject=Testbruger%20af%20TaxaBog">Bliv testbruger</a>
+        <a class="btn btn-ghost" href="#koerselstid">Sådan virker Kørselstid</a>
+      </div>
+      <p class="status">Lukket test i gang · iPhone og Android</p>
+    </div>
+
+    <aside class="slip" aria-label="Eksempel på en vagtseddel fra TaxaBog">
+      <div class="slip-head"><span>Vagtseddel</span><span>Eksempel</span></div>
+      <div class="slip-body">
+        <div class="slip-meta">Fredag 25. sep. 2026<br>Bil AB 12 345</div>
+        <dl>
+          <div class="row"><dt>Start</dt><dd>07:00</dd></div>
+          <div class="row"><dt>Slut</dt><dd>16:45</dd></div>
+          <div class="row"><dt>Vagt</dt><dd>9t 45m</dd></div>
+          <div class="row"><dt>Pause, bekræftet</dt><dd>− 35m</dd></div>
+          <div class="rule"></div>
+          <div class="row total"><dt>Arbejdstid</dt><dd>9t 10m</dd></div>
+          <div class="row wait"><dt>Heraf ventetid ved adresser</dt><dd>52m</dd></div>
+        </dl>
+        <div class="slip-foot">Kilde: bilens GPS, hentet hvert minut.<br>Stop over 19 min er bekræftet af føreren.</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section id="taxabog">
+  <div class="wrap">
+    <h2>Det kan TaxaBog</h2>
+    <p class="section-intro">Bygget til hverdagen i taxa og flextrafik, med de begreber du bruger i forvejen.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Vagtregnskab <span class="tag">Offline</span></h3>
+        <p>Registrér indkørt, Dankort, konto, kreditsedler, kontant og udgifter. Km-stand hentes fra
+        forrige vagt i samme bil. Det virker uden net og synkroniseres, når du er online igen.</p>
+      </div>
+      <div class="feature">
+        <h3>Kørselstid <span class="tag">GPS</span></h3>
+        <p>Tryk Start vagt, og appen henter bilens position fra GPS-trackeren hvert minut. Ventetid
+        ved adresser og mellem ture tælles som arbejdstid, og du ser pauser og arbejdstid, når vagten slutter.</p>
+      </div>
+      <div class="feature">
+        <h3>Rapport til vognafregning <span class="tag">PDF</span></h3>
+        <p>Lav en rapport med tider og adresser for ventetiden, klar til at vedlægge, hvis vognafregningen
+        ikke stemmer med det, du har kørt.</p>
+      </div>
+      <div class="feature">
+        <h3>Deling med vognmand <span class="tag">Excel</span></h3>
+        <p>Giv din vognmand adgang til dine vagter i en bestemt periode med en kode, og eksportér
+        vagtregnskabet til Excel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="koerselstid">
+  <div class="wrap how">
+    <div>
+      <h2>Sådan virker Kørselstid</h2>
+      <p class="section-intro">Du trykker to gange om dagen. Resten henter appen selv.</p>
+      <ol class="steps">
+        <li><div><strong>Start vagt</strong><span>Vælg bilen, når du kører ud.</span></div></li>
+        <li><div><strong>Kør som normalt</strong><span>Bilens position hentes hvert minut, også når appen er lukket.</span></div></li>
+        <li><div><strong>Svar, når bilen har holdt stille i 19 minutter</strong><span>Pause, venter på arbejde eller færdig for i dag.</span></div></li>
+        <li><div><strong>Slut vagt</strong><span>Se arbejdstid, pauser og ventetid, og lav rapporten.</span></div></li>
+      </ol>
+    </div>
+    <div class="rules">
+      <table>
+        <caption>Sådan tælles et stop</caption>
+        <tbody>
+          <tr><th>Under 2 min</th><td>Trafik, lyskryds og korte stop</td></tr>
+          <tr><th>2–19 min</th><td><span class="paid">Arbejdstid.</span> Ventetid ved afhentning, på hospitalet eller mellem ture</td></tr>
+          <tr><th>Over 19 min</th><td>Appen spørger dig. Kun det, du bekræfter som pause, trækkes fra</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="om">
+  <div class="wrap"><div class="about">
+    <h2>Om EgyDan ApS</h2>
+    <p>EgyDan ApS er et dansk vognmandsfirma i flextrafik. Vi kører selv, og TaxaBog er bygget ud fra
+    det, vi oplever bag rattet: lange ventetider ved adresserne, vagtregnskab på papir og vognafregninger,
+    der er svære at kontrollere.</p>
+    <p>Målet er enkelt. Førere og vognmænd skal kunne se, hvad der faktisk blev kørt, og have
+    dokumentationen klar, når tallene ikke stemmer.</p>
+  </div></div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact-grid">
+    <h2>Kontakt</h2>
+    <p>Vil du teste TaxaBog, eller har du spørgsmål? Skriv til os.</p>
+    <div class="contact-mail"><a href="mailto:support@egydan.com">support@egydan.com</a></div>
+    <p>EgyDan ApS · CVR 46090942</p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 EgyDan ApS · CVR 46090942 · Danmark</span>
+    <nav aria-label="Juridisk">
+      <a href="privatlivspolitik/">Privatlivspolitik</a>
+      <a href="vilkaar/">Vilkår</a>
+      <a href="mailto:support@egydan.com">support@egydan.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
