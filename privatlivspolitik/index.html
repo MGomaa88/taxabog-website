@@ -33,7 +33,7 @@
     <article class="prose">
 <h1>Privatlivspolitik</h1>
 <p><strong>Gældende fra:</strong> 29. september 2026<br />
-<strong>Senest opdateret:</strong> 2. oktober 2026</p>
+<strong>Senest opdateret:</strong> 3. oktober 2026</p>
 <p>Denne privatlivspolitik forklarer, hvordan <strong>EgyDan ApS</strong> ("vi", "os") indsamler, bruger og beskytter personoplysninger i appen <strong>TaxaBog</strong> og på hjemmesiderne taxabog.dk og egydan.com. Vi følger EU's databeskyttelsesforordning (GDPR) og den danske databeskyttelseslov.</p>
 <h2>1. Dataansvarlig</h2>
 <p>EgyDan ApS<br />
@@ -60,6 +60,8 @@ Danmark</p>
 <li>adresse, som GPS-udbyderen oplyser</li>
 </ul>
 <p>Vi henter kun positioner, mens du har en aktiv vagt, og kun for biler, du har fået adgang til. Ud fra positionerne beregner vi stop, pauser, ventetid og arbejdstid. Dine egne svar (pause, venter på arbejde, slut vagt) gemmes sammen med vagten.</p>
+<p>Vognmænd: Hvis du er vognmand og forbinder jeres GPS-konto i appen, gemmer vi firmanavn, CVR-nummer og API-nøglen til GPS-kontoen. Nøglen gemmes krypteret og kan ikke ses i appen bagefter. Vi gemmer også bilerne på kontoen og de nummerplader, du giver dem.</p>
+<p>Når en fører indløser en bilkode fra vognmanden, gemmer vi, hvilke biler føreren har adgang til, og hvem der gav adgangen. Vognmanden kan se Kørselstid-rapporterne for vagter, der køres i hans biler: førerens navn, tidspunkter, stop, pauser og adresser. Vognmanden kan ikke se førerens vagtregnskab. Føreren får det at vide, før koden indløses.</p>
 <h3>2.4 Deling</h3>
 <p>Hvis du deler dine vagter med en vognmand eller kollega, gemmer vi, hvem der har adgang, i hvilken periode, og eventuelle eksport-anmodninger.</p>
 <h3>2.5 Tekniske oplysninger</h3>
@@ -127,6 +129,14 @@ Danmark</p>
 <td>Indtil de udløber eller tilbagekaldes</td>
 </tr>
 <tr>
+<td>GPS-forbindelse og API-nøgle</td>
+<td>Indtil vognmanden fjerner forbindelsen eller sletter sin konto</td>
+</tr>
+<tr>
+<td>Førernes adgang til biler</td>
+<td>Indtil vognmanden fjerner adgangen eller forbindelsen</td>
+</tr>
+<tr>
 <td>Sikkerhedskopier af slettede konti</td>
 <td>Slettes senest 30 dage efter sletning</td>
 </tr>
@@ -137,7 +147,7 @@ Danmark</p>
 <li>Al kommunikation er krypteret (HTTPS/TLS).</li>
 <li>Adgangskoder gemmes med bcrypt.</li>
 <li>Databasen bruger adgangsregler på rækkeniveau, så hver bruger kun kan se sine egne data og det, andre udtrykkeligt har delt.</li>
-<li>Adgangsnøglen til GPS-udbyderen ligger kun på serveren, aldrig i appen.</li>
+<li>API-nøgler til GPS-udbydere gemmes krypteret på serveren (Supabase Vault) og sendes aldrig til appen.</li>
 <li>Vi kigger ikke i dine data, medmindre du beder os om hjælp.</li>
 </ul>
 <p>Ved et brud på persondatasikkerheden, der indebærer høj risiko for dig, giver vi dig besked uden unødig forsinkelse, jf. GDPR art. 34.</p>
