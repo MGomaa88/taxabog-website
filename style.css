@@ -563,3 +563,4 @@ h2 {
   .how { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .phone-k { order: 2; max-width: 260px; }
 }
+.demo { width: 100%; max-width: 960px; display: block; margin: 32px auto; border-radius: 16px; }
