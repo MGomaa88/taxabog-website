@@ -144,6 +144,16 @@ a:focus-visible, button:focus-visible {
   font-size: 1.35rem;
   letter-spacing: -0.02em;
 }
+.brand-icon { align-self: center; border-radius: 8px; flex: none; }
+.app-chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+.app-chip img { border-radius: 13px; flex: none; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); }
+.app-chip strong { display: block; font-size: 1rem; }
+.app-chip .status { margin: 2px 0 0; }
 .brand-sub {
   font-family: var(--mono);
   font-size: 0.78rem;

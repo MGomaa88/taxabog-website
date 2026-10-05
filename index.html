@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TaxaBog · Vagtregnskab og kørselstid for taxa og flextrafik</title>
-<meta name="description" content="TaxaBog er en gratis app til taxa- og flextrafikførere: registrér vagter, del dem med din vognmand og få overblik over din økonomi og kørselstid. Udviklet af EgyDan ApS.">
+<meta name="description" content="TaxaBog er en gratis app til taxa- og flextrafikførere: registrér vagter, del dem med din vognmand og få overblik over din økonomi og kørselstid. Eksportér dine vagter til Excel, når du vil.">
+<meta property="og:image" content="https://taxabog.dk/img/app-icon-512.png">
 <meta name="theme-color" content="#111316" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#eef0f2" media="(prefers-color-scheme: light)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316191d'/%3E%3Crect x='6' y='9' width='20' height='6' rx='2' fill='%23ffb800'/%3E%3Crect x='6' y='18' width='20' height='3' rx='1.5' fill='%23eef0f2'/%3E%3Crect x='6' y='23' width='13' height='3' rx='1.5' fill='%23eef0f2'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/app-icon-180.png">
 <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -15,6 +17,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="">
+      <img class="brand-icon" src="img/app-icon-128.png" width="34" height="34" alt="">
       <span class="brand-mark">TaxaBog</span>
       <span class="brand-sub">af EgyDan ApS</span>
     </a>
@@ -38,12 +41,15 @@
         <h1>Registrér vagten. Del den. Se hvad du <span class="hl">tjener</span>.</h1>
       </div>
       <div>
-      <p class="lead">TaxaBog er en gratis app til taxa- og flextrafikførere. Du registrerer dine vagter, giver din vognmand adgang med en kode, og får overblik over din økonomi. Kører du flextrafik, kan du desuden dokumentere ventetiden med GPS-kørselstid.</p>
+      <p class="lead">TaxaBog er en gratis app til taxa- og flextrafikførere. Du registrerer dine vagter, giver din vognmand adgang med en kode og følger din indtjening i appens analyse. Dine tal er dine: <strong>eksportér alle vagter til Excel</strong>, når du vil, til regnskab, revisor eller dit eget overblik. Kører du flextrafik, kan du desuden dokumentere ventetiden med GPS-kørselstid.</p>
       <div class="actions">
         <a class="btn btn-primary" href="mailto:support@taxabog.dk?subject=Testbruger%20af%20TaxaBog">Bliv testbruger</a>
         <a class="btn btn-ghost" href="#taxabog">Se hovedfunktionerne</a>
       </div>
-      <p class="status">Lukket test i gang · iPhone og Android</p>
+      <div class="app-chip">
+        <img src="img/app-icon-128.png" width="56" height="56" alt="TaxaBog-appens ikon">
+        <div><strong>TaxaBog-appen</strong><span class="status">Lukket test i gang · iPhone og Android</span></div>
+      </div>
       </div>
     </div>
     <figure class="hero-art">
@@ -83,7 +89,7 @@
         <ul class="ticks">
           <li>Adgangen gælder kun i den periode, du vælger, og du kan tilbagekalde den når som helst</li>
           <li>Delte vagter er skrivebeskyttede for dem, der ikke ejer dem</li>
-          <li>Eksportér vagtregnskabet til Excel, eller send en anmodning om eksport</li>
+          <li>Eksportér dine vagter til Excel, til regnskab, revisor eller dit eget overblik</li>
         </ul>
       </div>
       <figure class="phone">
@@ -101,6 +107,7 @@
           <li>7 dage, 30 dage, denne måned, eller vælg selv perioden med Fra og Til</li>
           <li>Indkørt, kontant, antal vagter, kilometer og snit pr. vagt</li>
           <li>Et søjlediagram med indtjeningen for hver vagt</li>
+          <li>Filtrér på bil, hvis du kører i flere biler</li>
         </ul>
       </div>
       <figure class="phone">
