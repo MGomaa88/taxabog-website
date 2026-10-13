@@ -565,18 +565,12 @@ h2 {
 }
 .demo { width: 100%; max-width: 960px; display: block; margin: 32px auto; border-radius: 16px; }
 
-/* Kørselstid: sample report instead of the paper slip */
-.report-shot { margin: 0; justify-self: center; max-width: 420px; width: 100%; }
-.report-shot a { display: block; }
-.report-shot img {
-  display: block; width: 100%; height: auto;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  box-shadow: 0 22px 48px -26px rgba(0, 0, 0, 0.45);
-  transform: rotate(1.2deg);
-  transition: transform 0.2s ease;
+/* Link to the sample report, inside the slip */
+.slip-link {
+  display: block; margin-top: 4px; padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.85rem; font-weight: 600; color: var(--ink);
+  text-decoration: none;
 }
-.report-shot a:hover img { transform: rotate(0deg) scale(1.01); }
-.report-shot figcaption { margin-top: 14px; text-align: center; font-size: 0.85rem; color: var(--muted); }
-.report-shot figcaption a { display: inline; color: var(--ink); font-weight: 600; }
+.slip-link span { display: block; margin-bottom: 2px; font-weight: 400; color: var(--muted); text-decoration: none; }
+.slip-link:hover { text-decoration: underline; text-underline-offset: 3px; }
