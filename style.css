@@ -224,6 +224,8 @@ h1 {
 .btn-primary:hover { filter: brightness(1.05); }
 .btn-ghost { color: var(--ink); }
 .btn-ghost:hover { background: var(--surface); }
+.store-badge { display: inline-flex; line-height: 0; }
+.store-badge img { display: block; height: 48px; width: auto; }
 .status {
   margin: 22px 0 0;
   font-size: var(--step--1);
