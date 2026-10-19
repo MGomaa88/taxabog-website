@@ -169,6 +169,21 @@ a:focus-visible, button:focus-visible {
 }
 .nav a { text-decoration: none; color: var(--muted); }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
+/* "flextrafik" tag beside Kørselstid, so flextrafik drivers spot it */
+.nav-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--signal);
+  color: var(--signal-ink);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  vertical-align: 1px;
+}
 
 /* ---------- hero ---------- */
 
