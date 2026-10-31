@@ -33,7 +33,7 @@
     <article class="prose">
 <h1>Privatlivspolitik</h1>
 <p><strong>Gældende fra:</strong> 29. september 2026<br />
-<strong>Senest opdateret:</strong> 17. oktober 2026</p>
+<strong>Senest opdateret:</strong> 31. oktober 2026</p>
 <p>Denne privatlivspolitik forklarer, hvordan <strong>EgyDan ApS</strong> ("vi", "os") indsamler, bruger og beskytter personoplysninger i appen <strong>TaxaBog</strong> og på hjemmesiderne taxabog.dk og egydan.com. Vi følger EU's databeskyttelsesforordning (GDPR) og den danske databeskyttelseslov.</p>
 <h2>1. Dataansvarlig</h2>
 <p>EgyDan ApS<br />
@@ -48,7 +48,7 @@ Danmark</p>
 <li>E-mailadresse (bruges til login)</li>
 <li>Telefonnummer, hvis du selv angiver det</li>
 <li>Adgangskode, gemt krypteret, så vi ikke kan læse den</li>
-<li>Logger du ind med Apple: dit navn og din e-mailadresse fra Apple (det kan være en anonym videresendelsesadresse). Vi får aldrig din adgangskode til Apple.</li>
+<li>Logger du ind med Apple eller Google: dit navn og din e-mailadresse fra Apple/Google (hos Apple kan det være en anonym videresendelsesadresse). Vi får aldrig din adgangskode til Apple eller Google.</li>
 <li>Et internt kontonummer (f.eks. MG001), som support kan bruge til at finde din konto</li>
 </ul>
 <h3>2.2 Vagtregnskab</h3>
@@ -64,12 +64,16 @@ Danmark</p>
 <p>Vognmænd: Hvis du er vognmand og forbinder jeres GPS-konto i appen, gemmer vi firmanavn, CVR-nummer og API-nøglen til GPS-kontoen. Nøglen gemmes krypteret og kan ikke ses i appen bagefter. Vi gemmer også bilerne på kontoen og de nummerplader, du giver dem.</p>
 <p>Når en fører indløser en bilkode fra vognmanden, gemmer vi, hvilke biler føreren har adgang til, og hvem der gav adgangen. Vognmanden kan se Kørselstid-rapporterne for vagter, der køres i hans biler: førerens navn, tidspunkter, stop, pauser og adresser. Vognmanden kan ikke se førerens vagtregnskab. Føreren får det at vide, før koden indløses.</p>
 <h3>2.4 Deling</h3>
-<p>Hvis du deler dine vagter med en vognmand eller kollega, gemmer vi, hvem der har adgang, i hvilken periode, og eventuelle eksport-anmodninger.</p>
-<h3>2.5 Tekniske oplysninger</h3>
+<p>Hvis du deler dine vagter med en vognmand eller kollega, gemmer vi, hvem der har adgang, i hvilken periode, hvilke biler og vagttyper (taxa / flextrafik) delingen gælder, og eventuelle eksport-anmodninger.</p>
+<h3>2.5 Scanning af kvitteringer</h3>
+<p><strong>Taxa (med AI):</strong> Hvis du vælger <strong>Scan kvittering</strong> og har givet tilladelse, læser telefonen billedet, beskærer det til selve kvitteringen og dækker navne, CVR-, tilladelses-, chauffør- og telefonnumre med sort. Først derefter sendes billedet via vores server til vores leverandør Anthropic, som med AI aflæser tallene (beløb, kilometer og tidspunkter) og sender dem tilbage til appen. Bilnummeret læses på telefonen og udfyldes af appen; det dækkes ikke. Vi gemmer ikke billedet. Vi gemmer, at du har givet tilladelse (tidspunkt og version), og hvor mange scanninger du har brugt pr. dag, så vi kan begrænse brugen. Du kan trække tilladelsen tilbage under <strong>Indstillinger</strong> og altid udfylde vagten selv.</p>
+<p><strong>Flextrafik:</strong> Når du uploader et billede af en slutrapport, læses teksten kun på telefonen. Hverken billedet eller teksten sendes til os eller andre.</p>
+<h3>2.6 Tekniske oplysninger</h3>
 <p>For at holde tjenesten sikker og fejlfri kan vores leverandører registrere tekniske oplysninger som IP-adresse, enhedstype og fejlmeddelelser. De gemmes ikke længere end nødvendigt.</p>
 <h2>3. Hvorfor behandler vi oplysningerne?</h2>
 <ul>
 <li><strong>For at levere appen</strong> (kontrakt, GDPR art. 6, stk. 1, litra b): oprette din konto, gemme dine vagter, beregne indtjening og kørselstid, dele data efter dine anvisninger og lave PDF-rapporter.</li>
+<li><strong>Scanning af kvitteringer med AI</strong> (samtykke, art. 6, stk. 1, litra a): aflæse tallene på en taxakvittering, når du selv vælger det. Du kan trække samtykket tilbage når som helst.</li>
 <li><strong>Sikkerhed</strong> (legitim interesse, art. 6, stk. 1, litra f): beskytte mod misbrug og uautoriseret adgang.</li>
 <li><strong>Nødvendige e-mails</strong> (kontrakt): bekræftelse af e-mail, nulstilling af adgangskode og påmindelse, hvis en vagt har stået åben længe. Vi sender ikke markedsføring uden dit samtykke.</li>
 <li><strong>Lovkrav</strong> (art. 6, stk. 1, litra c): når loven kræver, at vi udleverer eller opbevarer oplysninger.</li>
@@ -96,13 +100,18 @@ Danmark</p>
 <td>EU</td>
 </tr>
 <tr>
+<td>Anthropic</td>
+<td>Aflæsning af scannede taxakvitteringer med AI</td>
+<td>USA</td>
+</tr>
+<tr>
 <td>GitHub Pages</td>
 <td>Hosting af taxabog.dk og egydan.com</td>
 <td>Globalt</td>
 </tr>
 </tbody>
 </table></div>
-<p>GPS-positionerne kommer fra din telefon, eller fra bilens GPS-udbyder (EcoMobility / web-track.dk), hvis vognmanden har forbundet den. Vi sælger aldrig dine oplysninger.</p>
+<p>GPS-positionerne kommer fra din telefon, eller fra bilens GPS-udbyder (EcoMobility / web-track.dk), hvis vognmanden har forbundet den. Anthropic får kun billedet med de sorte felter, ikke dit navn, din e-mail eller din konto, og bruger det ikke til at træne AI-modeller. Vi sælger aldrig dine oplysninger.</p>
 <p>Når du deler vagter med en anden bruger, kan vedkommende se de vagter og den periode, du har valgt. Du kan tilbagekalde adgangen når som helst.</p>
 <h2>5. Hvor længe gemmer vi oplysningerne?</h2>
 <div class="table-scroll"><table>
@@ -138,6 +147,18 @@ Danmark</p>
 <td>Indtil vognmanden fjerner adgangen eller forbindelsen</td>
 </tr>
 <tr>
+<td>Billeder af scannede kvitteringer</td>
+<td>Gemmes ikke af os. Hos Anthropic slettes de senest efter 30 dage</td>
+</tr>
+<tr>
+<td>Tilladelse til scanning med AI</td>
+<td>Indtil du trækker den tilbage eller sletter din konto</td>
+</tr>
+<tr>
+<td>Antal scanninger pr. dag</td>
+<td>90 dage</td>
+</tr>
+<tr>
 <td>Sikkerhedskopier af slettede konti</td>
 <td>Slettes senest 30 dage efter sletning</td>
 </tr>
@@ -162,7 +183,7 @@ Danmark</p>
 <li><strong>Klage:</strong> Du kan klage til Datatilsynet, <a href="https://www.datatilsynet.dk">www.datatilsynet.dk</a>, tlf. 33 19 32 00. Skriv gerne til os først, så vi kan løse problemet.</li>
 </ul>
 <h2>8. Overførsel til lande uden for EU</h2>
-<p>Appens data ligger i EU. Hjemmesiderne taxabog.dk og egydan.com hostes af GitHub, som kan behandle tekniske oplysninger (f.eks. IP-adresse) uden for EU på grundlag af EU-US Data Privacy Framework.</p>
+<p>Appens data ligger i EU. Når du scanner en taxakvittering, sendes billedet med de sorte felter til Anthropic i USA på grundlag af EU-Kommissionens standardkontraktbestemmelser i vores databehandleraftale. Hjemmesiderne taxabog.dk og egydan.com hostes af GitHub, som kan behandle tekniske oplysninger (f.eks. IP-adresse) uden for EU på grundlag af EU-US Data Privacy Framework.</p>
 <h2>9. Børn</h2>
 <p>TaxaBog er til professionelle førere og vognmænd over 18 år. Vi indsamler ikke bevidst oplysninger om børn.</p>
 <h2>10. Cookies</h2>
