@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /bekraeftet/
+Disallow: /nulstil/
+
+Sitemap: https://taxabog.dk/sitemap.xml
