@@ -487,6 +487,14 @@ h2 {
 }
 .contact-mail a { text-decoration-color: var(--signal); text-decoration-thickness: 3px; }
 .contact-grid { display: grid; gap: 10px; }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-radius: 999px;
+  background: #1f8a4c; color: #fff;
+  font-weight: 700; text-decoration: none;
+}
+.btn-whatsapp:hover { background: #18703d; }
+.btn-whatsapp:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
 .contact-grid p { margin: 0; color: var(--muted); }
 
 /* ---------- legal pages ---------- */
