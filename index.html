@@ -117,25 +117,16 @@
         <source src="img/taxabog-hero.mp4" type="video/mp4">
         <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="En håndskrevet afregningsseddel ved siden af fem skærme fra TaxaBog">
       </video>
-      <button class="sound-btn" id="hero-sound" type="button" aria-pressed="false">
-        <span aria-hidden="true">🔇</span> Lyd til
-      </button>
+      <div class="video-ctl">
+        <button class="vbtn" type="button" data-play="hero-video" aria-label="Sæt videoen på pause">
+          <span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>
+        </button>
+        <button class="vbtn" id="hero-sound" type="button" aria-pressed="false">
+          <span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>
+        </button>
+      </div>
     </figure>
-    <script>
-      (function () {
-        var v = document.getElementById('hero-video'), b = document.getElementById('hero-sound');
-        if (!v || !b) return;
-        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          v.removeAttribute('autoplay'); v.pause(); v.controls = true;
-        }
-        b.addEventListener('click', function () {
-          v.muted = !v.muted;
-          if (!v.muted) { v.play(); }
-          b.setAttribute('aria-pressed', String(!v.muted));
-          b.innerHTML = v.muted ? '<span aria-hidden="true">🔇</span> Lyd til' : '<span aria-hidden="true">🔊</span> Lyd fra';
-        });
-      })();
-    </script>
+
   </div>
 </div>
 
@@ -162,12 +153,19 @@
               <li>Appen udfylder vognløb, tider og betaling. Billedet læses kun på din telefon.</li>
             </ol>
           </div>
-          <p class="scan-privacy"><strong>Dine oplysninger er beskyttet.</strong> Før et taxa-billede bliver aflæst, dækker telefonen navne, CVR-, tilladelses-, chauffør- og telefonnumre med sort. Først derefter aflæser en ekstern AI-tjeneste tallene. Billedet bliver ikke gemt. <a href="privatlivspolitik/">Læs mere i privatlivspolitikken</a>.</p>
+          <p class="scan-privacy"><strong>Dine oplysninger er beskyttet.</strong> Før et taxa-billede bliver aflæst, dækker telefonen navne, CVR-, tilladelses-, chauffør- og telefonnumre. Først derefter aflæser en ekstern AI-tjeneste tallene. Billedet bliver ikke gemt. <a href="privatlivspolitik/">Læs mere i privatlivspolitikken</a>.</p>
         </div>
         <div class="scan-media">
-          <video class="scan-video" autoplay muted loop playsinline preload="metadata" poster="img/taxabog-scan-poster.jpg" aria-label="Video: en vagtrapport scannes, og felterne udfyldes">
+          <div class="scan-player">
+          <video id="scan-video" class="scan-video" autoplay muted loop playsinline preload="metadata" poster="img/taxabog-scan-poster.jpg" aria-label="Video: en vagtrapport scannes, og felterne udfyldes">
             <source src="img/taxabog-scan.mp4" type="video/mp4">
           </video>
+          <div class="video-ctl">
+            <button class="vbtn" type="button" data-play="scan-video" aria-label="Sæt videoen på pause">
+              <span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>
+            </button>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -300,8 +298,8 @@
           <tbody>
             <tr><th>Under 2 min</th><td>Trafik og lys. Tæller som kørsel</td></tr>
             <tr><th>2–10 min</th><td><span class="paid">Arbejdstid.</span> Ventetid ved adresser og mellem ture. Du kan gennemgå og bekræfte stoppene, når du slutter vagten</td></tr>
-            <tr><th>Med stopnummer</th><td><span class="paid">Arbejdstid.</span> Stoppet tæller altid som arbejde, og stopnummeret står i rapporten</td></tr>
             <tr><th>Over 10 min</th><td>Appen sender dig en besked og spørger: Pause, Venter på arbejde eller Slut vagt. Svarer du ikke, tæller stoppet som arbejde og markeres til gennemsyn</td></tr>
+            <tr><th>Med stopnummer</th><td><span class="paid">Arbejdstid.</span> Stoppet tæller altid som arbejde, og stopnummeret står i rapporten</td></tr>
           </tbody>
         </table>
       </div>
@@ -344,5 +342,33 @@
     </nav>
   </div>
 </footer>
+<script>
+      (function () {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function label(btn, v) {
+          var paused = v.paused;
+          btn.setAttribute('aria-label', paused ? 'Afspil videoen' : 'Sæt videoen på pause');
+          btn.innerHTML = paused ? '<span aria-hidden="true">▶</span> <span class="vbtn-txt">Afspil</span>'
+                                 : '<span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>';
+        }
+        document.querySelectorAll('[data-play]').forEach(function (btn) {
+          var v = document.getElementById(btn.getAttribute('data-play'));
+          if (!v) return;
+          if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+          v.addEventListener('play', function () { label(btn, v); });
+          v.addEventListener('pause', function () { label(btn, v); });
+          btn.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
+          label(btn, v);
+        });
+        var hv = document.getElementById('hero-video'), sb = document.getElementById('hero-sound');
+        if (hv && sb) sb.addEventListener('click', function () {
+          hv.muted = !hv.muted;
+          if (!hv.muted && hv.paused) hv.play();
+          sb.setAttribute('aria-pressed', String(!hv.muted));
+          sb.innerHTML = hv.muted ? '<span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>'
+                                  : '<span aria-hidden="true">🔊</span> <span class="vbtn-txt">Lyd fra</span>';
+        });
+      })();
+    </script>
 </body>
 </html>

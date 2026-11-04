@@ -632,15 +632,15 @@ h2 {
 }
 
 /* Mine vagter: the Excel export peeks out behind the phone */
-#vagter.pillar { grid-template-columns: 3.2rem minmax(0, 1fr) 268px; }
-.phone-stack { position: relative; width: 100%; max-width: 268px; padding-bottom: 18px; }
+#vagter.pillar { grid-template-columns: 3.2rem minmax(0, 1fr) 290px; }
+.phone-stack { position: relative; width: 100%; max-width: 290px; padding-bottom: 18px; }
 .phone-stack .phone { position: relative; z-index: 1; }
 .stack-back {
   position: absolute;
   z-index: 0;
   top: 34px;
-  right: 0;
-  width: 66%;
+  right: 22px;
+  width: 62%;
   height: auto;
   border-radius: 18px;
   transform: rotate(7deg);
@@ -652,11 +652,15 @@ h2 {
   .phone-stack .phone { max-width: 240px; margin-top: 0; }
 }
 
-/* Hero video: sound on/off */
-.sound-btn {
+/* Video buttons: pause/play and sound */
+.video-ctl {
   position: absolute;
   right: 14px;
   bottom: 14px;
+  display: flex;
+  gap: 8px;
+}
+.vbtn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -669,5 +673,11 @@ h2 {
   cursor: pointer;
   backdrop-filter: blur(6px);
 }
-.sound-btn:hover { background: rgba(14, 16, 19, 0.88); }
-.sound-btn:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+.vbtn:hover { background: rgba(14, 16, 19, 0.88); }
+.vbtn:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+.scan-player { position: relative; }
+.scan-player .video-ctl { right: 10px; bottom: 10px; }
+@media (max-width: 480px) {
+  .vbtn { padding: 7px 11px; font-size: 0.82rem; }
+  .video-ctl { right: 10px; bottom: 10px; }
+}
