@@ -80,11 +80,7 @@
       <span class="brand-mark">TaxaBog</span>
     </a>
     <nav class="nav" aria-label="Hovedmenu">
-      <a href="#scan">Scan <span class="nav-tag">nyt</span></a>
-        <a href="#registrer">Registrér</a>
-      <a href="#del">Del</a>
-      <a href="#analyse">Analyse</a>
-      <a href="#koerselstid">Kørselstid <span class="nav-tag">flextrafik</span></a>
+      <a href="#scan">Funktioner</a>
       <a href="#om">Om os</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -111,28 +107,17 @@
         <a class="store-badge" href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">
           <img src="img/google-play-badge-da.png" width="162" height="48" alt="Hent i Google Play">
         </a>
-        <a class="btn btn-ghost" href="#scan">Se det nye: scan</a>
-      </div>
-      <div class="app-chip">
-        <img src="img/app-icon-128.png" width="56" height="56" alt="TaxaBog-appens ikon">
-        <div><strong>TaxaBog-appen</strong><span class="status">På App Store og Google Play</span></div>
       </div>
       </div>
     </div>
     <figure class="hero-art">
-      <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="Mindre papir, mere kørsel: en håndskrevet afregningsseddel ved siden af TaxaBog-appens analyseskærm" fetchpriority="high">
+      <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="Mindre papir, mere kørsel: en håndskrevet afregningsseddel ved siden af TaxaBog-appens Analytics og en Excel-eksport af vagterne" fetchpriority="high">
     </figure>
   </div>
 </div>
-<video class="demo" autoplay muted playsinline controls preload="metadata"
-       poster="img/taxabog-app-demo-poster.jpg">
-  <source src="img/taxabog-app-demo.webm" type="video/webm">
-  <source src="img/taxabog-app-demo.mp4" type="video/mp4">
-</video>
 
   <section id="scan">
     <div class="wrap">
-      <p class="eyebrow">Nyt i version 1.1</p>
       <h2>Scan rapporten, så udfylder appen vagten</h2>
       <p class="section-intro">Du behøver ikke taste tallene ind selv. Tag et billede, tjek tallene, og tryk Gem.</p>
       <div class="scan-grid">
@@ -160,14 +145,6 @@
           <video class="scan-video" autoplay muted loop playsinline preload="metadata" poster="img/taxabog-scan-poster.jpg" aria-label="Video: en vagtrapport scannes, og felterne udfyldes">
             <source src="img/taxabog-scan.mp4" type="video/mp4">
           </video>
-          <figure class="phone">
-            <img src="img/app-scan-udfyldt.jpeg" loading="lazy" alt="Registrér vagt efter en scanning: bilnummer, km og beløb er udfyldt og markeret med gult">
-            <figcaption>Efter scanningen: tjek de gule felter</figcaption>
-          </figure>
-          <figure class="phone">
-            <img src="img/app-flex.jpeg" loading="lazy" alt="Registrér vagt for Flextrafik med knappen Upload billede af slutrapport">
-            <figcaption>Flextrafik: upload slutrapporten</figcaption>
-          </figure>
         </div>
       </div>
     </div>
@@ -208,9 +185,12 @@
             <li>Send den til din revisor eller vognmand, eller gem den selv</li>
           </ul>
         </div>
-        <figure class="phone">
-          <img src="img/app-vagter.jpeg" loading="lazy" alt="Mine vagter i TaxaBog med en liste over vagter, beløb og knappen Eksportér">
-        </figure>
+        <div class="phone-stack">
+          <img class="stack-back" src="img/app-excel.webp" width="600" height="1300" loading="lazy" alt="Excel-filen fra TaxaBog med vagterne i et regneark og fanerne Taxa og Flextrafik">
+          <figure class="phone">
+            <img src="img/app-vagter.jpeg" loading="lazy" alt="Mine vagter i TaxaBog med en liste over vagter, beløb og knappen Eksportér">
+          </figure>
+        </div>
       </div>
 
       <div class="pillar" id="del">
@@ -251,9 +231,9 @@
 <section id="koerselstid">
   <div class="wrap k-head">
     <div>
-      <p class="eyebrow">Til flextrafik · GPS</p>
-      <h2>Kørselstid: få ventetiden i flextrafik dokumenteret</h2>
-      <p class="section-intro">I flextrafik tæller tiden, også ventetiden ved adresserne og mellem turene. Telefonens GPS viser, hvor meget af vagten der var arbejde, pause og ventetid. Du trykker to gange om dagen, og resten registrerer appen selv. Rapporten kan vedlægges, hvis vognafregningen ikke stemmer.</p>
+      <p class="eyebrow">Til flextrafik · GPS og stopnummer</p>
+      <h2>Kørselstid: få ventetiden og stopnumrene dokumenteret</h2>
+      <p class="section-intro">I flextrafik tæller tiden, også ventetiden ved adresserne og mellem turene. Telefonens GPS viser, hvor meget af vagten der var arbejde, pause og ventetid. Ved hvert stop kan du skrive stopnummeret fra turen, så kan du se præcis, hvilken kunde du ventede på. Rapporten kan vedlægges, hvis vognafregningen ikke stemmer.</p>
       <p class="k-note">Bruger telefonens GPS, kun mens vagten kører — der skal ikke installeres noget i bilen. Læg telefonen i holderen, gerne på opladning. Kører du almindelig taxa med taxameter, har du ikke brug for Kørselstid. Resten af TaxaBog virker for alle.</p>
     </div>
     <aside class="slip" aria-label="Eksempel på en vagtseddel fra TaxaBog">
@@ -268,6 +248,7 @@
           <div class="rule"></div>
           <div class="row total"><dt>Arbejdstid</dt><dd>9t 10m</dd></div>
           <div class="row wait"><dt>Heraf ventetid ved adresser</dt><dd>52m</dd></div>
+          <div class="row"><dt>Stop med stopnummer</dt><dd>9</dd></div>
         </dl>
         <div class="slip-foot">Kilde: telefonens GPS under vagten.<br>Stop over 10 min er bekræftet af føreren.</div>
         <a class="slip-link" href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener"><span>Sådan ser rapporten ud</span>Åbn eksemplet (PDF) →</a>
@@ -283,10 +264,11 @@
         <h3>Sådan virker Kørselstid</h3>
         <ol class="steps">
           <li><div><strong>Start vagten</strong><span>Tryk Start vagt og skriv bilens nummerplade. Telefonens GPS registrerer nu, hvor bilen kører og holder stille.</span></div></li>
-          <li><div><strong>Kør som du plejer</strong><span>Appen sorterer selv dine stop efter, hvor længe bilen holder stille, og alle stop kommer med i rapporten. Venter du på en kunde, minder appen dig efter 3 minutter om at skrive stopnummeret, så står det i rapporten.</span></div></li>
+          <li><div><strong>Kør som du plejer</strong><span>Appen registrerer selv dine stop, og alle stop kommer med i rapporten. Stoppet slutter først, når bilen kører igen, så det deler sig ikke, fordi du går hen efter kunden.</span></div></li>
+          <li><div><strong>Skriv stopnummeret</strong><span>Holder du stille i 3 minutter, får du en besked og et felt til stopnummeret. Skriv nummeret fra turen, så står det ved stoppet i rapporten, og stoppet tæller som arbejde. Glemmer du det, kan du skrive det bagefter i rapporten.</span></div></li>
           <li><div><strong>Hold pause</strong><span>Tryk Start pause og Slut pause. Pausen trækkes fra arbejdstiden.</span></div></li>
           <li><div><strong>Slut vagten</strong><span>Tryk Slut vagt. Du ser med det samme vagtens længde, arbejdstid, pauser og ventetid.</span></div></li>
-          <li><div><strong>Få rapporten</strong><span>Lav en PDF med alle stop, tider og adresser, klar til at vedlægge, hvis vognafregningen ikke stemmer. Du kan også dele dine vagter med din vognmand via Del adgang.</span></div></li>
+          <li><div><strong>Få rapporten</strong><span>Lav en PDF med alle stop, tider, adresser og stopnumre, klar til at vedlægge, hvis vognafregningen ikke stemmer. Du kan også dele dine vagter med din vognmand via Del adgang.</span></div></li>
         </ol>
       </div>
       <div class="rules">
@@ -295,6 +277,7 @@
           <tbody>
             <tr><th>Under 2 min</th><td>Trafik og lys. Tæller som kørsel</td></tr>
             <tr><th>2–10 min</th><td><span class="paid">Arbejdstid.</span> Ventetid ved adresser og mellem ture. Du kan gennemgå og bekræfte stoppene, når du slutter vagten</td></tr>
+            <tr><th>Med stopnummer</th><td><span class="paid">Arbejdstid.</span> Stoppet tæller altid som arbejde, og stopnummeret står i rapporten</td></tr>
             <tr><th>Over 10 min</th><td>Appen sender dig en besked og spørger: Pause, Venter på arbejde eller Slut vagt. Svarer du ikke, tæller stoppet som arbejde og markeres til gennemsyn</td></tr>
           </tbody>
         </table>
