@@ -377,8 +377,9 @@ h2 {
 }
 .hero-top h1 { margin-bottom: 0; }
 .hero-top .lead { margin: 0 0 24px; }
-.hero-art { margin: 0; }
-.hero-art img {
+.hero-art { margin: 0; position: relative; }
+.hero-art img,
+.hero-art video {
   display: block;
   width: 100%;
   height: auto;
@@ -650,3 +651,23 @@ h2 {
   .phone-stack { max-width: 300px; margin-top: 8px; }
   .phone-stack .phone { max-width: 240px; margin-top: 0; }
 }
+
+/* Hero video: sound on/off */
+.sound-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(14, 16, 19, 0.72);
+  color: #fff;
+  font: 600 0.9rem/1 var(--body);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.sound-btn:hover { background: rgba(14, 16, 19, 0.88); }
+.sound-btn:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }

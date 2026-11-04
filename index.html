@@ -111,8 +111,31 @@
       </div>
     </div>
     <figure class="hero-art">
-      <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="Mindre papir, mere kørsel: en håndskrevet afregningsseddel ved siden af fem skærme fra TaxaBog: scan af vagtrapport, Mine vagter, Analytics, Kørselstid og en Excel-eksport" fetchpriority="high">
+      <video id="hero-video" autoplay muted loop playsinline preload="auto" width="1536" height="1024"
+             poster="img/taxabog-hero-poster.jpg"
+             aria-label="Video: før med papir og slutrapport, nu med TaxaBog: scan af vagtrapport, Mine vagter, Analytics, Kørselstid og Excel">
+        <source src="img/taxabog-hero.mp4" type="video/mp4">
+        <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="En håndskrevet afregningsseddel ved siden af fem skærme fra TaxaBog">
+      </video>
+      <button class="sound-btn" id="hero-sound" type="button" aria-pressed="false">
+        <span aria-hidden="true">🔇</span> Lyd til
+      </button>
     </figure>
+    <script>
+      (function () {
+        var v = document.getElementById('hero-video'), b = document.getElementById('hero-sound');
+        if (!v || !b) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          v.removeAttribute('autoplay'); v.pause(); v.controls = true;
+        }
+        b.addEventListener('click', function () {
+          v.muted = !v.muted;
+          if (!v.muted) { v.play(); }
+          b.setAttribute('aria-pressed', String(!v.muted));
+          b.innerHTML = v.muted ? '<span aria-hidden="true">🔇</span> Lyd til' : '<span aria-hidden="true">🔊</span> Lyd fra';
+        });
+      })();
+    </script>
   </div>
 </div>
 
