@@ -111,7 +111,7 @@
       </div>
     </div>
     <figure class="hero-art">
-      <video id="hero-video" autoplay muted loop playsinline preload="auto" width="1536" height="1024"
+      <video id="hero-video" autoplay muted loop playsinline preload="auto" width="1600" height="1066"
              poster="img/taxabog-hero-poster.jpg"
              aria-label="Video: før med papir og slutrapport, nu med TaxaBog: scan af vagtrapport, Mine vagter, Analytics, Del adgang, Kørselstid og Excel">
         <source src="img/taxabog-hero.mp4" type="video/mp4">
@@ -121,7 +121,7 @@
         <button class="vbtn" type="button" data-play="hero-video" aria-label="Sæt videoen på pause">
           <span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>
         </button>
-        <button class="vbtn" id="hero-sound" type="button" aria-pressed="false">
+        <button class="vbtn" data-sound="hero-video" type="button" aria-pressed="false">
           <span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>
         </button>
       </div>
@@ -163,6 +163,9 @@
           <div class="video-ctl">
             <button class="vbtn" type="button" data-play="scan-video" aria-label="Sæt videoen på pause">
               <span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>
+            </button>
+            <button class="vbtn" type="button" data-sound="scan-video" aria-pressed="false">
+              <span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>
             </button>
           </div>
           </div>
@@ -360,13 +363,16 @@
           btn.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
           label(btn, v);
         });
-        var hv = document.getElementById('hero-video'), sb = document.getElementById('hero-sound');
-        if (hv && sb) sb.addEventListener('click', function () {
-          hv.muted = !hv.muted;
-          if (!hv.muted && hv.paused) hv.play();
-          sb.setAttribute('aria-pressed', String(!hv.muted));
-          sb.innerHTML = hv.muted ? '<span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>'
-                                  : '<span aria-hidden="true">🔊</span> <span class="vbtn-txt">Lyd fra</span>';
+        document.querySelectorAll('[data-sound]').forEach(function (sb) {
+          var v = document.getElementById(sb.getAttribute('data-sound'));
+          if (!v) return;
+          sb.addEventListener('click', function () {
+            v.muted = !v.muted;
+            if (!v.muted && v.paused) v.play();
+            sb.setAttribute('aria-pressed', String(!v.muted));
+            sb.innerHTML = v.muted ? '<span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>'
+                                   : '<span aria-hidden="true">🔊</span> <span class="vbtn-txt">Lyd fra</span>';
+          });
         });
       })();
     </script>
