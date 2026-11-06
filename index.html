@@ -70,7 +70,7 @@
 <link rel="apple-touch-icon" href="img/app-icon-180.png">
 <meta name="apple-itunes-app" content="app-id=6820941732">
 <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20261103">
+<link rel="stylesheet" href="style.css?v=20261106">
 </head>
 <body>
 <header class="site-header">
@@ -84,6 +84,7 @@
       <a href="#om">Om os</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
+    <a class="nav-cta" href="#hent">Hent appen</a>
   </div>
 </header>
 
@@ -132,6 +133,7 @@
 
   <section id="scan">
     <div class="wrap">
+      <p class="eyebrow">Scan · taxa og flextrafik</p>
       <h2>Scan rapporten, så udfylder appen vagten</h2>
       <p class="section-intro">Du behøver ikke taste tallene ind selv. Tag et billede, tjek tallene, og tryk Gem.</p>
       <div class="scan-grid">
@@ -176,6 +178,7 @@
 
   <section id="taxabog">
   <div class="wrap">
+    <p class="eyebrow">Funktioner</p>
     <h2>Det kan TaxaBog</h2>
     <p class="section-intro">Lavet til hverdagen i taxa og flextrafik, med de ord du bruger i forvejen.</p>
 
@@ -309,10 +312,52 @@
       <p class="k-note">GPS bruges kun, mens vagten kører, og appen beder kun om adgang “Mens appen er i brug”. Når du slutter vagten, stopper GPS’en.</p>
     </div>
   </div>
+  <div class="wrap report">
+    <div class="report-text">
+      <h3>Rapporten med stopnumre</h3>
+      <p>Én side med hele vagten: arbejdstid, pause og ventetid øverst, og under det hvert stop med tid, varighed, stopnummer og adresse. Klar til at sende til vognmanden eller vedlægge vognafregningen.</p>
+      <ul class="ticks">
+        <li>Stopnummeret står ved det stop, hvor du ventede</li>
+        <li>Ventetiden lægges sammen for dig</li>
+        <li>Lav PDF’en direkte fra vagten i appen</li>
+      </ul>
+      <a class="report-link" href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener">Åbn eksemplet (PDF) →</a>
+    </div>
+    <figure class="report-paper">
+      <a href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener">
+        <img src="img/rapport-eksempel.webp" width="1000" height="1181" loading="lazy" alt="Eksempel på en Kørselstid-rapport fra TaxaBog med ni stop, stopnumre fra 65 til 81 og 52 minutters ventetid">
+      </a>
+    </figure>
+  </div>
+</section>
+
+<section id="hent" class="demo-band">
+  <div class="wrap">
+    <p class="eyebrow">Se det hele</p>
+    <h2>TaxaBog på 35 sekunder</h2>
+    <p class="section-intro">Scan, Flextrafik, Mine vagter og Excel, Del adgang og Kørselstid. Tryk på afspil, og slå lyden til.</p>
+    <div class="demo-player">
+      <video id="demo-video" controls playsinline preload="none" width="1920" height="1080" poster="img/taxabog-demo-poster.jpg" aria-label="Video: sådan virker TaxaBog, fra scan af vagtrapporten til Kørselstid med stopnummer">
+        <source src="img/taxabog-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="demo-cta">
+      <p><strong>Gratis</strong> til iPhone og Android.</p>
+      <div class="actions">
+        <a class="store-badge" href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">
+          <img src="img/app-store-badge-da-white.svg" width="144" height="48" alt="Hent i App Store">
+        </a>
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">
+          <img src="img/google-play-badge-da.png" width="162" height="48" alt="Hent i Google Play">
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="om">
   <div class="wrap"><div class="about">
+    <p class="eyebrow">Om os</p>
     <h2>Om EgyDan ApS</h2>
     <p>EgyDan ApS er et dansk vognmandsfirma i flextrafik. Vi kører selv, og TaxaBog er bygget ud fra
     det, vi oplever bag rattet: lange ventetider ved adresserne, vagtregnskab på papir og vognafregninger,
@@ -324,7 +369,8 @@
 
 <section id="kontakt">
   <div class="wrap contact-grid">
-    <h2>Kontakt</h2>
+    <p class="eyebrow">Kontakt</p>
+    <h2>Har du spørgsmål?</h2>
     <p>TaxaBog kan hentes i <a href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">App Store</a> til iPhone og i <a href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">Google Play</a> til Android. Har du spørgsmål? Skriv til os.</p>
     <div class="contact-mail"><a href="mailto:support@taxabog.dk">support@taxabog.dk</a></div>
     <div><a class="btn-whatsapp" href="https://wa.me/4560554508?text=Hej%20TaxaBog%2C%20jeg%20har%20et%20sp%C3%B8rgsm%C3%A5l%20om%20appen." target="_blank" rel="noopener">
@@ -362,6 +408,11 @@
           v.addEventListener('pause', function () { label(btn, v); });
           btn.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
           label(btn, v);
+        });
+        // only one video with sound at a time: the demo pauses the loops
+        var demo = document.getElementById('demo-video');
+        if (demo) demo.addEventListener('play', function () {
+          ['hero-video', 'scan-video'].forEach(function (id) { var o = document.getElementById(id); var sb = document.querySelector('[data-sound="' + id + '"]'); if (o && !o.muted && sb) sb.click(); });
         });
         document.querySelectorAll('[data-sound]').forEach(function (sb) {
           var v = document.getElementById(sb.getAttribute('data-sound'));
