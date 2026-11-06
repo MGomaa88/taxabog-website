@@ -809,3 +809,41 @@ section .eyebrow { margin-bottom: 12px; }
   .demo-band { padding-block: 64px; }
   .demo-player { border-radius: 12px; margin-inline: -4px; }
 }
+
+/* Kørselstid: the report peeks out behind the phone */
+.how { grid-template-columns: 360px minmax(0, 1fr); }
+.k-stack { max-width: 360px; padding-bottom: 24px; }
+.k-stack .phone-k { width: 72%; max-width: 260px; }
+.k-stack .k-report {
+  top: 60px;
+  right: -6px;
+  left: auto;
+  width: 66%;
+  line-height: 0;
+  transform: rotate(6deg);
+  background: #fff;
+  overflow: hidden;
+}
+.k-stack .k-report img { display: block; width: 100%; height: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  .k-stack .k-report { transition: transform 0.35s ease; }
+  .k-stack .k-report:hover { transform: rotate(3deg) scale(1.03); }
+}
+@media (max-width: 820px) {
+  .how { grid-template-columns: minmax(0, 1fr); }
+  .k-stack { order: 2; max-width: 320px; }
+  .k-stack .phone-k { max-width: 240px; }
+}
+
+/* Pillars v2: the number sits on top of the heading, text block centred next to the phone */
+.pillar { grid-template-columns: minmax(0, 1fr) 230px; align-items: center; column-gap: 56px; }
+#vagter.pillar { grid-template-columns: minmax(0, 1fr) 300px; }
+.pillar-body .pillar-num { width: 2.8rem; height: 2.8rem; font-size: 1.35rem; margin: 0 0 16px; align-self: auto; }
+.k-stack .k-report { width: 72%; right: -18px; top: 44px; }
+@media (max-width: 820px) {
+  .pillar, #vagter.pillar { grid-template-columns: minmax(0, 1fr); }
+}
+#vagter .phone-stack { width: 300px; max-width: 100%; }
+.k-stack { width: 360px; max-width: 100%; }
+#vagter .phone-stack .phone { margin: 0; width: 220px; justify-self: start; }
+#vagter .stack-back { right: 0; }

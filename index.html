@@ -70,7 +70,7 @@
 <link rel="apple-touch-icon" href="img/app-icon-180.png">
 <meta name="apple-itunes-app" content="app-id=6820941732">
 <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20261106">
+<link rel="stylesheet" href="style.css?v=20261106b">
 </head>
 <body>
 <header class="site-header">
@@ -183,8 +183,8 @@
     <p class="section-intro">Lavet til hverdagen i taxa og flextrafik, med de ord du bruger i forvejen.</p>
 
     <div class="pillar" id="registrer">
-      <div class="pillar-num">1</div>
       <div class="pillar-body">
+        <div class="pillar-num">1</div>
         <h3>Registrér vagt</h3>
         <p>Tryk <em>Registrér vagt</em>, vælg Taxa eller Flextrafik, og skriv dagens tal. Eller scan rapporten, så gør appen det for dig. Start-km hentes fra din sidste vagt i samme bil.</p>
         <ul class="ticks">
@@ -200,8 +200,8 @@
     </div>
 
           <div class="pillar" id="vagter">
-        <div class="pillar-num">2</div>
         <div class="pillar-body">
+        <div class="pillar-num">2</div>
           <h3>Mine vagter og Excel</h3>
           <p>Alle dine vagter samlet ét sted, i stedet for papir og sedler. Tryk <em>Eksportér</em>,
           så får du dem i et regneark.</p>
@@ -221,8 +221,8 @@
       </div>
 
       <div class="pillar" id="del">
+        <div class="pillar-body">
         <div class="pillar-num">3</div>
-      <div class="pillar-body">
         <h3>Del og giv adgang</h3>
         <p>Du bestemmer, hvem der må se dine vagter. Lav en kode til din vognmand, og vælg selv periode, biler og vagttype. Du kan altid trække adgangen tilbage.</p>
         <ul class="ticks">
@@ -237,8 +237,8 @@
     </div>
 
     <div class="pillar" id="analyse">
+        <div class="pillar-body">
         <div class="pillar-num">4</div>
-      <div class="pillar-body">
         <h3>Analyse</h3>
         <p>Se hvad du tjener: hvad du har kørt ind, hvor meget der var kontant, og hvad en vagt giver i snit.</p>
         <ul class="ticks">
@@ -283,9 +283,14 @@
     </aside>
   </div>
   <div class="wrap how">
-    <figure class="phone phone-k">
-      <img src="img/app-koerselstid.webp" width="390" height="845" loading="lazy" alt="Kørselstid i TaxaBog: en aktiv vagt med Start pause og Slut vagt og en liste over afsluttede vagter">
-    </figure>
+    <div class="phone-stack k-stack">
+      <a class="stack-back k-report" href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener" aria-label="Åbn eksempel på Kørselstid-rapporten (PDF)">
+        <img src="img/rapport-eksempel.webp" width="1000" height="1181" loading="lazy" alt="Kørselstid-rapporten fra TaxaBog med stop, ventetid og stopnumre">
+      </a>
+      <figure class="phone phone-k">
+        <img src="img/app-koerselstid.webp" width="390" height="845" loading="lazy" alt="Kørselstid i TaxaBog: en aktiv vagt med Start pause og Slut vagt og en liste over afsluttede vagter">
+      </figure>
+    </div>
     <div class="how-text">
       <div>
         <h3>Sådan virker Kørselstid</h3>
