@@ -81,10 +81,11 @@
     </a>
     <nav class="nav" aria-label="Hovedmenu">
       <a href="#scan">Funktioner</a>
+      <a href="job/">Jobportal</a>
       <a href="#om">Om os</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="nav-cta" href="#hent">Hent appen</a>
+    <a class="nav-cta" id="nav-hent" href="#hent">Hent appen</a>
   </div>
 </header>
 
@@ -432,5 +433,16 @@
         });
       })();
     </script>
+<script>
+  // "Hent appen": phones go straight to their store, computers scroll to #hent.
+  (function () {
+    var a = document.getElementById('nav-hent');
+    if (!a) return;
+    var ua = navigator.userAgent || '';
+    var iOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (iOS) a.href = 'https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732';
+    else if (/Android/i.test(ua)) a.href = 'https://play.google.com/store/apps/details?id=dk.egydan.taxabog';
+  })();
+</script>
 </body>
 </html>
