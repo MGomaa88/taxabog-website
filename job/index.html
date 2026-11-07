@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TaxaBog Job · job i taxa og flextrafik</title>
+<meta name="description" content="TaxaBog Job: job i taxa og flextrafik fra hele Danmark hos verificerede vognmænd. Dit nummer deles kun, når I begge har sagt ja. Gratis.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://taxabog.dk/job/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taxabog.dk/job/">
+<meta property="og:title" content="TaxaBog Job · job i taxa og flextrafik">
+<meta property="og:description" content="Verificerede vognmænd. Job fra hele Danmark. Dit nummer deles kun, når I begge har sagt ja. Gratis.">
+<meta property="og:image" content="https://taxabog.dk/img/og-job.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="da_DK">
+<meta property="og:site_name" content="TaxaBog">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://taxabog.dk/img/og-job.png">
+
+<meta name="theme-color" content="#111316" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef0f2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/app-icon-180.png">
+<link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css?v=20261106b">
+<style>
+  /* TaxaBog Job page only */
+  .job-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: center; }
+  .soon {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--signal); color: var(--signal-ink); padding: 4px 10px; border-radius: 4px; margin: 0 0 18px;
+  }
+  .job-hero .actions { margin-top: 4px; }
+
+  /* the job card: the page's one boxed object, like the slip on the front page */
+  .jobcard {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.35);
+    padding: 20px 20px 18px; max-width: 380px; width: 100%; justify-self: center;
+    transform: rotate(-1deg);
+  }
+  .jobcard-co { display: flex; align-items: center; justify-content: space-between; gap: 10px;
+                font-size: var(--step--1); color: var(--muted); margin: 0 0 10px; }
+  .badge-ok { font-weight: 600; color: var(--good); white-space: nowrap; }
+  .jobcard h3 { font-family: var(--display); font-weight: 700; font-size: var(--step-1); line-height: 1.2; margin: 0 0 4px; }
+  .jobcard-place { margin: 0 0 14px; color: var(--muted); font-size: var(--step--1); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; padding: 0; list-style: none; }
+  .chips li { font-family: var(--mono); font-size: 0.75rem; border: 1px solid var(--line); border-radius: 4px; padding: 2px 7px; }
+  .jobcard-btn { display: block; text-align: center; background: var(--signal); color: var(--signal-ink);
+                 font-weight: 700; border-radius: 999px; padding: 11px 16px; font-size: var(--step--1); }
+  .jobcard-note { margin: 10px 0 0; font-size: 0.8rem; color: var(--muted); text-align: center; }
+
+  .two-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; }
+  .two-paths h3 { font-family: var(--display); font-weight: 650; font-size: var(--step-1); margin: 0 0 18px; }
+
+  .faq { max-width: 44em; }
+  .faq details { border-top: 1px solid var(--line); padding: 16px 0; }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary { font-weight: 700; cursor: pointer; }
+  .faq details p { color: var(--muted); margin: 8px 0 0; }
+
+  .job-cta { text-align: center; }
+  .job-cta .section-intro { margin-inline: auto; }
+  .job-cta .actions { justify-content: center; }
+  .demo-band .btn-ghost { color: #eef0f2; border-color: #eef0f2; }
+  .demo-band .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+  @media (max-width: 820px) {
+    .job-hero, .two-paths { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+    .jobcard { transform: none; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">
+      <img class="brand-icon" src="../img/app-icon-128.png" width="34" height="34" alt="">
+      <span class="brand-mark">TaxaBog Job</span>
+    </a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#tillid">Tillid</a>
+      <a href="#saadan">Sådan virker det</a>
+      <a href="#faq">Spørgsmål</a>
+    </nav>
+    <a class="nav-cta" href="#skriv">Skriv dig på</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div class="job-hero">
+      <div>
+        <p class="soon">Kommer snart</p>
+        <h1>Job i taxa og flextrafik. Uden at give dit <span class="hl">nummer</span> væk.</h1>
+        <p class="lead">TaxaBog Job samler job fra hele Danmark hos verificerede vognmænd. Du viser interesse med ét tryk, og dit telefonnummer deles først, når I begge har sagt ja. Gratis for både chauffører og vognmænd.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:support@taxabog.dk?subject=Vognmand%20-%20skriv%20mig%20p%C3%A5%20TaxaBog%20Job">Jeg er vognmand</a>
+          <a class="btn btn-ghost" href="mailto:support@taxabog.dk?subject=Chauff%C3%B8r%20-%20giv%20mig%20besked%20om%20TaxaBog%20Job">Jeg er chauffør</a>
+        </div>
+      </div>
+      <figure class="jobcard" aria-label="Eksempel på et jobopslag i TaxaBog Job">
+        <p class="jobcard-co"><span>Eksempel Taxi ApS</span><span class="badge-ok">✓ Verificeret vognmand</span></p>
+        <h3>Chauffør til aften og weekend</h3>
+        <p class="jobcard-place">Odense · Fyn</p>
+        <ul class="chips">
+          <li>Taxa</li><li>Aften</li><li>Weekend</li><li>Deltid</li><li>Bil stilles til rådighed</li>
+        </ul>
+        <span class="jobcard-btn" aria-hidden="true">Vis interesse</span>
+        <p class="jobcard-note">Eksempel. Firmaet og opslaget er opdigtet.</p>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<section id="tillid">
+  <div class="wrap">
+    <p class="eyebrow">Tillid</p>
+    <h2>Derfor kan du stole på det</h2>
+    <p class="section-intro">Tillid er hele ideen, og derfor er jobområdet bygget sådan her.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Verificerede vognmænd</h3>
+        <p>Virksomheden tjekkes i CVR, ejeren logger ind med MitID Erhverv, og vi godkender tilladelsen fra Færdselsstyrelsen. Først derefter kan der oprettes opslag.</p>
+      </div>
+      <div class="feature">
+        <h3>Begge siger ja</h3>
+        <p>Dit telefonnummer deles kun med en vognmand, når I begge har sagt ja. Ingen andre ser det.</p>
+      </div>
+      <div class="feature">
+        <h3>Mindst mulig data</h3>
+        <p>Vi beder ikke om straffeattest eller lægeerklæring. Billedet af dit taxikørekort ses kun af TaxaBog og slettes efter kontrol.</p>
+      </div>
+      <div class="feature">
+        <h3>Mennesker bestemmer</h3>
+        <p>Ingen algoritme sorterer eller afviser dig. Det er vognmanden, der vælger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="saadan">
+  <div class="wrap">
+    <p class="eyebrow">Sådan virker det</p>
+    <h2>To veje til kontakt, én regel</h2>
+    <p class="section-intro">Enten viser du interesse for et opslag, eller en vognmand spørger dig. Nummeret deles først, når begge har sagt ja.</p>
+    <div class="two-paths">
+      <div>
+        <h3>Du finder jobbet</h3>
+        <ol class="steps">
+          <li><div><strong>Find et job i hele Danmark</strong><span>Filtrér på region, postnummer, taxa eller flextrafik, kørselskontor, arbejdstid, ansættelse, bil og startdato.</span></div></li>
+          <li><div><strong>Vis interesse</strong><span>Ét tryk og en valgfri besked. Ingen CV og ingen lange formularer. Vognmanden ser din jobprofil, men ikke dit nummer.</span></div></li>
+          <li><div><strong>Vognmanden siger ja</strong><span>Så får vognmanden dit nummer og ringer til dig. Du kan trække din interesse tilbage, indtil da.</span></div></li>
+        </ol>
+      </div>
+      <div>
+        <h3>Vognmanden finder dig</h3>
+        <ol class="steps">
+          <li><div><strong>Gør din profil synlig</strong><span>Kun hvis du selv slår det til. Profilen viser område, erfaring og kørekort-badge, ikke dit navn eller nummer.</span></div></li>
+          <li><div><strong>Vognmanden spørger</strong><span>En verificeret vognmand beder om kontakt til et bestemt job. Du får en besked.</span></div></li>
+          <li><div><strong>Du siger ja eller nej tak</strong><span>Siger du ja, får vognmanden dit nummer. Siger du nej tak, sker der ikke mere.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vognmand">
+  <div class="wrap">
+    <p class="eyebrow">For vognmænd</p>
+    <h2>Find chauffører uden spam</h2>
+    <ul class="ticks">
+      <li>Gratis opslag, der udløber efter 30 dage, så alt er aktuelt</li>
+      <li>Verificeret med CVR, MitID Erhverv og tilladelsen fra Færdselsstyrelsen</li>
+      <li>Interesserede chauffører med jobprofil og verificeret taxikørekort som badge</li>
+      <li>Klare regler: opslag må ikke stille krav om alder, køn, etnisk oprindelse, religion, handicap eller seksuel orientering</li>
+      <li>Alle kan anmelde og blokere</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Spørgsmål</p>
+    <h2>Ofte stillede spørgsmål</h2>
+    <div class="faq">
+      <details><summary>Hvad koster det?</summary><p>Intet. TaxaBog og jobområdet er gratis for både chauffører og vognmænd.</p></details>
+      <details><summary>Hvem kan se mit telefonnummer?</summary><p>Kun en vognmand, du har sagt ja til. Viser du interesse for et opslag, deles nummeret, når vognmanden siger ja. Spørger en vognmand dig, deles det kun, hvis du siger ja.</p></details>
+      <details><summary>Skal jeg uploade straffeattest eller lægeerklæring?</summary><p>Nej, og det skal du heller ikke. Du kan vælge at få dit taxikørekort verificeret. Billedet ses kun af TaxaBog og slettes efter kontrol. Vognmanden ser kun et badge.</p></details>
+      <details><summary>Hvordan ved jeg, at vognmanden er ægte?</summary><p>Virksomheden tjekkes i CVR, ejeren logger ind med MitID Erhverv, og vi godkender tilladelsen fra Færdselsstyrelsen, før der kan oprettes opslag. Er der noget galt, kan du anmelde opslaget.</p></details>
+      <details><summary>Kan vognmænd se min profil uden at jeg ved det?</summary><p>Kun hvis du selv gør din profil synlig. Ellers ser en vognmand kun din profil, når du har vist interesse for et af deres opslag.</p></details>
+      <details><summary>Hvornår åbner det?</summary><p>Jobområdet åbner for hele Danmark. Skriv til os, så giver vi besked, den dag det er klar.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="skriv" class="demo-band job-cta">
+  <div class="wrap">
+    <p class="eyebrow">Vær med fra start</p>
+    <h2>Skriv dig på</h2>
+    <p class="section-intro">De første 20 verificerede vognmænd får et grundlæggerbadge på deres opslag.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:support@taxabog.dk?subject=Vognmand%20-%20skriv%20mig%20p%C3%A5%20TaxaBog%20Job">Skriv mig på som vognmand</a>
+      <a class="btn btn-ghost" href="mailto:support@taxabog.dk?subject=Chauff%C3%B8r%20-%20giv%20mig%20besked%20om%20TaxaBog%20Job">Giv mig besked som chauffør</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 EgyDan ApS · CVR 46090942 · Danmark</span>
+    <nav aria-label="Juridisk">
+      <a href="../">taxabog.dk</a>
+      <a href="../privatlivspolitik/">Privatlivspolitik</a>
+      <a href="../vilkaar/">Vilkår</a>
+      <a href="mailto:support@taxabog.dk">support@taxabog.dk</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
