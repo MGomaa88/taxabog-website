@@ -45,6 +45,8 @@
   .share-line { margin: 4px 0; color: var(--muted); }
   .share-company { margin: 14px 0 0; font-weight: 700; }
   .share-verified { color: var(--muted); font-weight: 500; }
+  .share-founder { color: var(--muted); font-weight: 500; }
+  .share-founder::before { content: "· "; }
   .share-shifts { margin: 10px 0 0; padding-left: 18px; }
   .share .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 18px; }
   .share-note { color: var(--muted); font-size: 0.9rem; }
@@ -82,7 +84,7 @@
       <p class="share-line" id="area"></p>
       <p class="share-line" id="work"></p>
       <ul class="share-shifts" id="shifts" hidden></ul>
-      <p class="share-company"><span id="company"></span> <span class="share-verified">✓ Verificeret vognmand</span></p>
+      <p class="share-company"><span id="company"></span> <span class="share-verified">✓ Verificeret vognmand</span> <span id="founder" class="share-founder" hidden>Grundlægger</span></p>
     </article>
 
     <div id="open" hidden>

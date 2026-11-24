@@ -1,4 +1,5 @@
-// TaxaBog Job share page (docs/plans/1.2.0-jobs-step7.md G1, G4).
+// TaxaBog Job share page (docs/plans/1.2.0-jobs-step7.md G1, G4; the
+// "Grundlægger" mark: docs/plans/1.2.0-jobs-step8df.md §4.1).
 // Reads ?id=<uuid>, fetches the public view of ONE live post from the edge
 // function job-share (no login, no key) and shows it. Text only via
 // textContent, never innerHTML. "Åbn i TaxaBog" uses the app scheme (a
@@ -83,6 +84,7 @@
     }
 
     el('company').textContent = String(p.company || '');
+    el('founder').hidden = p.founding !== true;   // "Grundlægger" (step 8d)
     el('open-app').setAttribute('href', openAppHref(id));
     show('post');
     el('open').hidden = false;
