@@ -1,0 +1,16 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "dk.egydan.taxabog",
+      "sha256_cert_fingerprints": [
+        "83:FC:18:FB:16:98:CA:D8:CF:B5:8E:AD:34:F3:FF:37:B1:A1:F6:AC:F3:B7:CC:09:40:BD:07:20:9D:D5:8E:EF",
+        "85:F5:7B:4A:30:0C:88:32:C9:A4:2E:DE:18:FD:48:B4:E0:CD:1E:EA:2B:B4:4F:23:24:21:A6:69:B7:AF:96:14",
+        "60:0A:4B:C2:C9:33:91:B0:EB:74:47:BA:15:F0:0F:EE:5E:B0:65:A1:AF:B2:2C:21:85:65:D9:30:93:64:1A:FE"
+      ]
+    }
+  }
+]
