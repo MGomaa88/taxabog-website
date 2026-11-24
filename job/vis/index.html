@@ -45,8 +45,12 @@
   .share-line { margin: 4px 0; color: var(--muted); }
   .share-company { margin: 14px 0 0; font-weight: 700; }
   .share-verified { color: var(--muted); font-weight: 500; }
-  .share-founder { color: var(--muted); font-weight: 500; }
-  .share-founder::before { content: "· "; }
+  .share-founder { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; border-radius: 999px;
+    border: 1px solid rgba(232,179,58,.55); background: rgba(232,179,58,.12); color: #B8860B;
+    font-size: .8em; font-weight: 700; vertical-align: middle; }
+  .share-founder[hidden] { display: none; }
+  .share-founder::before { content: "\2605"; font-size: .9em; }
+  @media (prefers-color-scheme: dark) { .share-founder { color: #E8B33A; } }
   .share-shifts { margin: 10px 0 0; padding-left: 18px; }
   .share .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 18px; }
   .share-note { color: var(--muted); font-size: 0.9rem; }
