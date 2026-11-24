@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://zcvayaoyhrnzhvocmuuq.supabase.co; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>TaxaBog Job · Opslag</title>
+<meta name="description" content="Et opslag i TaxaBog Job: faste job og akutte vagter i taxa og flextrafik hos verificerede vognmænd.">
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6820941732">
+
+<!-- Generic preview card (link scrapers don't run JavaScript, Q12) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taxabog.dk/job/">
+<meta property="og:title" content="TaxaBog Job · Akutte vagter og faste job i taxa og flextrafik">
+<meta property="og:description" content="Se opslaget i TaxaBog. Dit nummer deles først, når I begge siger ja.">
+<meta property="og:image" content="https://taxabog.dk/img/og-job.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="da_DK">
+<meta property="og:site_name" content="TaxaBog">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://taxabog.dk/img/og-job.png">
+
+<meta name="theme-color" content="#111316" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef0f2" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../../img/app-icon-180.png">
+<link rel="stylesheet" href="../../style.css?v=20261124">
+<style>
+  /* Share page only */
+  .share { max-width: 560px; margin: 0 auto; padding: 40px 0 56px; }
+  .share-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px 22px 20px; margin: 0 0 22px;
+  }
+  .share-card h1 { font-size: 1.6rem; margin: 6px 0 10px; }
+  .share-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+  .share-tag {
+    font-family: var(--mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px; color: var(--muted);
+  }
+  .share-tag.akut { background: var(--signal); color: var(--signal-ink); border-color: var(--signal); }
+  .share-line { margin: 4px 0; color: var(--muted); }
+  .share-company { margin: 14px 0 0; font-weight: 700; }
+  .share-verified { color: var(--muted); font-weight: 500; }
+  .share-shifts { margin: 10px 0 0; padding-left: 18px; }
+  .share .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 18px; }
+  .share-note { color: var(--muted); font-size: 0.9rem; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img class="brand-icon" src="../../img/app-icon-128.png" width="34" height="34" alt="">
+      <span class="brand-mark">TaxaBog Job</span>
+    </a>
+    <a class="nav-cta" href="../">Om TaxaBog Job</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="share">
+    <p id="loading">Henter opslaget…</p>
+
+    <div id="gone" hidden>
+      <h1>Opslaget findes ikke længere.</h1>
+      <p><a href="../">Se TaxaBog Job</a></p>
+    </div>
+
+    <div id="error" hidden>
+      <p>Kunne ikke hente opslaget. Prøv igen senere.</p>
+    </div>
+
+    <article id="post" class="share-card" hidden>
+      <div class="share-tags" id="tags"></div>
+      <h1 id="title"></h1>
+      <p class="share-line" id="area"></p>
+      <p class="share-line" id="work"></p>
+      <ul class="share-shifts" id="shifts" hidden></ul>
+      <p class="share-company"><span id="company"></span> <span class="share-verified">✓ Verificeret vognmand</span></p>
+    </article>
+
+    <div id="open" hidden>
+      <div class="actions">
+        <a class="btn btn-primary" id="open-app" href="../">Åbn i TaxaBog</a>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="store-badge" href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">
+        <img src="../../img/app-store-badge-da-black.svg" width="144" height="48" alt="Hent i App Store">
+      </a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">
+        <img src="../../img/google-play-badge-da.png" width="162" height="48" alt="Hent i Google Play">
+      </a>
+    </div>
+
+    <p class="share-note">Telefonnumre deles først i appen, når begge siger ja.</p>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 EgyDan ApS · CVR 46090942 · Danmark</span>
+    <nav aria-label="Juridisk">
+      <a href="../../">taxabog.dk</a>
+      <a href="../../privatlivspolitik/">Privatlivspolitik</a>
+      <a href="../../vilkaar/">Vilkår</a>
+      <a href="mailto:support@taxabog.dk">support@taxabog.dk</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="vis.js"></script>
+</body>
+</html>

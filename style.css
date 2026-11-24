@@ -476,6 +476,7 @@ h2 {
 .prose h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
 .prose h2 { font-size: var(--step-1); margin: 40px 0 10px; }
 .prose h3 { font-size: var(--step-0); margin: 24px 0 6px; font-weight: 700; }
+.prose h4 { font-size: var(--step-0); margin: 18px 0 4px; font-weight: 700; color: var(--ink); }
 .prose p, .prose li { color: var(--ink); }
 .prose ul { padding-left: 1.2em; }
 .prose li { margin-bottom: 4px; }
