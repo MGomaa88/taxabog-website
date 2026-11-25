@@ -70,7 +70,7 @@
 <link rel="apple-touch-icon" href="img/app-icon-180.png">
 <meta name="apple-itunes-app" content="app-id=6820941732">
 <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20261106b">
+<link rel="stylesheet" href="style.css?v=20261125">
 </head>
 <body>
 <header class="site-header">
@@ -92,74 +92,73 @@
 <main>
 <div class="hero">
   <div class="wrap">
-    <div class="hero-top">
+    <div class="main-hero">
       <div>
-        <p class="eyebrow">Til taxa- og flextrafikførere</p>
+        <p class="hero-badge">Til taxa- og flextrafikførere</p>
         <h1>Registrér vagten. Del den. Se hvad du <span class="hl">tjener</span>.</h1>
+        <p class="lead">TaxaBog er en gratis app til taxa- og flextrafikførere. <strong>Tag et billede af din vagtrapport, så udfylder appen vagten for dig.</strong> Du ser alle dine vagter og hvad du tjener, kan eksportere til Excel og give din vognmand adgang med en kode. Kører du flextrafik, kan telefonens GPS dokumentere din ventetid.</p>
+        <div class="actions">
+          <a class="store-badge" href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">
+            <picture>
+              <source srcset="img/app-store-badge-da-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="img/app-store-badge-da-black.svg" width="144" height="48" alt="Hent i App Store">
+            </picture>
+          </a>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">
+            <img src="img/google-play-badge-da.png" width="162" height="48" alt="Hent i Google Play">
+          </a>
+        </div>
+        <p class="status">100 % gratis til iPhone og Android · Taxa, flextrafik og jobportal</p>
       </div>
-      <div>
-      <p class="lead">TaxaBog er en gratis app til taxa- og flextrafikførere. <strong>Tag et billede af din vagtrapport, så udfylder appen vagten for dig.</strong> Du ser alle dine vagter og hvad du tjener, kan eksportere til Excel og give din vognmand adgang med en kode. Kører du flextrafik, kan telefonens GPS dokumentere din ventetid.</p>
-      <div class="actions">
-        <a class="store-badge" href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">
-          <picture>
-            <source srcset="img/app-store-badge-da-white.svg" media="(prefers-color-scheme: dark)">
-            <img src="img/app-store-badge-da-black.svg" width="144" height="48" alt="Hent i App Store">
-          </picture>
-        </a>
-        <a class="store-badge" href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">
-          <img src="img/google-play-badge-da.png" width="162" height="48" alt="Hent i Google Play">
-        </a>
-      </div>
-      </div>
+      <figure class="hero-art">
+        <video id="hero-video" autoplay muted loop playsinline preload="auto" width="1600" height="1066"
+               poster="img/taxabog-hero-poster.jpg"
+               aria-label="Video: før med papir og slutrapport, nu med TaxaBog: scan af vagtrapport, Mine vagter, Analytics, Del adgang, Kørselstid og Excel">
+          <source src="img/taxabog-hero.mp4" type="video/mp4">
+          <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="En håndskrevet afregningsseddel ved siden af fem skærme fra TaxaBog">
+        </video>
+        <div class="video-ctl">
+          <button class="vbtn" type="button" data-play="hero-video" aria-label="Sæt videoen på pause">
+            <span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>
+          </button>
+          <button class="vbtn" data-sound="hero-video" type="button" aria-pressed="false">
+            <span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>
+          </button>
+        </div>
+      </figure>
     </div>
-    <figure class="hero-art">
-      <video id="hero-video" autoplay muted loop playsinline preload="auto" width="1600" height="1066"
-             poster="img/taxabog-hero-poster.jpg"
-             aria-label="Video: før med papir og slutrapport, nu med TaxaBog: scan af vagtrapport, Mine vagter, Analytics, Del adgang, Kørselstid og Excel">
-        <source src="img/taxabog-hero.mp4" type="video/mp4">
-        <img src="img/taxabog-hero-da.jpg" width="1536" height="1024" alt="En håndskrevet afregningsseddel ved siden af fem skærme fra TaxaBog">
-      </video>
-      <div class="video-ctl">
-        <button class="vbtn" type="button" data-play="hero-video" aria-label="Sæt videoen på pause">
-          <span aria-hidden="true">❚❚</span> <span class="vbtn-txt">Pause</span>
-        </button>
-        <button class="vbtn" data-sound="hero-video" type="button" aria-pressed="false">
-          <span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>
-        </button>
-      </div>
-    </figure>
-
   </div>
 </div>
 
-  <section id="scan">
-    <div class="wrap">
-      <p class="eyebrow">Scan · taxa og flextrafik</p>
-      <h2>Scan rapporten, så udfylder appen vagten</h2>
-      <p class="section-intro">Du behøver ikke taste tallene ind selv. Tag et billede, tjek tallene, og tryk Gem.</p>
-      <div class="scan-grid">
-        <div class="scan-cards">
-          <div class="scan-card">
-            <h3>Taxa: vagtrapporten fra taxameteret</h3>
-            <ol class="scan-steps">
-              <li>Tryk <em>Registrér vagt</em> og derefter <em>Scan vagtrapport</em>.</li>
-              <li>Tag et billede af vagtrapporten, eller vælg et billede, du har taget.</li>
-              <li>Appen udfylder beløb, km og tider. Kører du på DRIVR eller Uber, virker deres vagtoversigt også.</li>
-              <li>Felter, appen er usikker på, bliver <span class="hl">gule</span>. Tjek dem, og tryk Gem.</li>
-            </ol>
-          </div>
-          <div class="scan-card">
-            <h3>Flextrafik: slutrapporten</h3>
-            <ol class="scan-steps">
-              <li>Tryk <em>Registrér vagt</em>, vælg <em>Flextrafik</em> og tryk <em>Upload billede af slutrapport</em>.</li>
-              <li>Vælg et skærmbillede af slutrapporten.</li>
-              <li>Appen udfylder vognløb, tider og betaling. Billedet læses kun på din telefon.</li>
-            </ol>
-          </div>
-          <p class="scan-privacy"><strong>Dine oplysninger er beskyttet.</strong> Før et taxa-billede bliver aflæst, dækker telefonen navne, CVR-, tilladelses-, chauffør- og telefonnumre. Først derefter aflæser en ekstern AI-tjeneste tallene. Billedet bliver ikke gemt. <a href="privatlivspolitik/">Læs mere i privatlivspolitikken</a>.</p>
+<section id="scan" class="demo-band scan-band">
+  <div class="wrap">
+    <p class="eyebrow">Højdepunkt · Scan taxa og flextrafik</p>
+    <h2>Scan rapporten, så udfylder appen vagten</h2>
+    <p class="section-intro">Du behøver ikke taste tallene ind selv. Tag et billede, tjek tallene, og tryk Gem.</p>
+    <div class="scan-grid">
+      <div class="scan-cards">
+        <div class="scan-card">
+          <p class="scan-role">Taxa</p>
+          <h3>Vagtrapporten fra taxameteret</h3>
+          <ol class="scan-steps">
+            <li>Tryk <em>Registrér vagt</em> og derefter <em>Scan vagtrapport</em>.</li>
+            <li>Tag et billede af vagtrapporten, eller vælg et billede, du har taget.</li>
+            <li>Appen udfylder beløb, km og tider. Kører du på DRIVR eller Uber, virker deres vagtoversigt også.</li>
+            <li>Felter, appen er usikker på, bliver <span class="hl-pill">gule</span>. Tjek dem, og tryk Gem.</li>
+          </ol>
         </div>
-        <div class="scan-media">
-          <div class="scan-player">
+        <div class="scan-card">
+          <p class="scan-role">Flextrafik</p>
+          <h3>Slutrapporten</h3>
+          <ol class="scan-steps">
+            <li>Tryk <em>Registrér vagt</em>, vælg <em>Flextrafik</em> og tryk <em>Upload billede af slutrapport</em>.</li>
+            <li>Vælg et skærmbillede af slutrapporten.</li>
+            <li>Appen udfylder vognløb, tider og betaling. Billedet læses kun på din telefon.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="scan-media">
+        <div class="scan-player">
           <video id="scan-video" class="scan-video" autoplay muted loop playsinline preload="metadata" poster="img/taxabog-scan-poster.jpg" aria-label="Video: en vagtrapport fotograferes og en slutrapport uploades, og felterne i appen udfyldes">
             <source src="img/taxabog-scan.mp4" type="video/mp4">
           </video>
@@ -171,41 +170,48 @@
               <span aria-hidden="true">🔇</span> <span class="vbtn-txt">Lyd til</span>
             </button>
           </div>
-          </div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="scan-privacy-bar">
+      <span class="scan-dot is-green" aria-hidden="true"></span>
+      <div>
+        <span class="scan-privacy-label">Privatliv · Dine oplysninger er beskyttet</span>
+        <p>Før et taxa-billede bliver aflæst, dækker telefonen navne, CVR-, tilladelses-, chauffør- og telefonnumre. Først derefter aflæser en ekstern AI-tjeneste tallene. Billedet bliver ikke gemt. <a href="privatlivspolitik/">Læs mere i privatlivspolitikken</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="taxabog">
+<section id="taxabog">
   <div class="wrap">
     <p class="eyebrow">Funktioner</p>
     <h2>Det kan TaxaBog</h2>
     <p class="section-intro">Lavet til hverdagen i taxa og flextrafik, med de ord du bruger i forvejen.</p>
 
-    <div class="pillar" id="registrer">
-      <div class="pillar-body">
-        <div class="pillar-num">1</div>
-        <h3>Registrér vagt</h3>
-        <p>Tryk <em>Registrér vagt</em>, vælg Taxa eller Flextrafik, og skriv dagens tal. Eller scan rapporten, så gør appen det for dig. Start-km hentes fra din sidste vagt i samme bil.</p>
-        <ul class="ticks">
-          <li>Taxa: indkørt, Dankort, konto, kreditsedler, kontant, udgifter og km</li>
-          <li>Flextrafik: vognløb, betaling og egenbetaling (kontant og kort)</li>
-          <li>Virker uden net og sender vagten, når du er online igen</li>
-          <li>Ret eller slet en vagt bagefter, hvis noget er forkert</li>
-        </ul>
-      </div>
-      <figure class="phone">
-        <img src="img/app-registrer.jpeg" loading="lazy" alt="Skærmen Registrér vagt i TaxaBog med Taxa valgt, knappen Scan vagtrapport og felterne dato, bilnummer, tider og km">
-      </figure>
-    </div>
-
-          <div class="pillar" id="vagter">
+    <div class="pillar-cards">
+      <article class="pillar-card is-featured" id="registrer">
         <div class="pillar-body">
-        <div class="pillar-num">2</div>
+          <div class="pillar-meta"><span class="pill-step">01</span><span class="pillar-cat">Vagtregnskab</span></div>
+          <h3>Registrér vagt</h3>
+          <p>Tryk <em>Registrér vagt</em>, vælg Taxa eller Flextrafik, og skriv dagens tal. Eller scan rapporten, så gør appen det for dig. Start-km hentes fra din sidste vagt i samme bil.</p>
+          <ul class="ticks">
+            <li>Taxa: indkørt, Dankort, konto, kreditsedler, kontant, udgifter og km</li>
+            <li>Flextrafik: vognløb, betaling og egenbetaling (kontant og kort)</li>
+            <li>Virker uden net og sender vagten, når du er online igen</li>
+            <li>Ret eller slet en vagt bagefter, hvis noget er forkert</li>
+          </ul>
+        </div>
+        <figure class="phone">
+          <img src="img/app-registrer.jpeg" loading="lazy" alt="Skærmen Registrér vagt i TaxaBog med Taxa valgt, knappen Scan vagtrapport og felterne dato, bilnummer, tider og km">
+        </figure>
+      </article>
+
+      <article class="pillar-card pillar-card-stack" id="vagter">
+        <div class="pillar-body">
+          <div class="pillar-meta"><span class="pill-step">02</span><span class="pillar-cat">Overblik &amp; Excel</span></div>
           <h3>Mine vagter og Excel</h3>
-          <p>Alle dine vagter samlet ét sted, i stedet for papir og sedler. Tryk <em>Eksportér</em>,
-          så får du dem i et regneark.</p>
+          <p>Alle dine vagter samlet ét sted, i stedet for papir og sedler. Tryk <em>Eksportér</em>, så får du dem i et regneark.</p>
           <ul class="ticks">
             <li>Se taxa og flextrafik, og filtrér på bil</li>
             <li>Excel-filen har taxa og flextrafik på hver sin fane</li>
@@ -219,39 +225,40 @@
             <img src="img/app-vagter.jpeg" loading="lazy" alt="Mine vagter i TaxaBog med en liste over vagter, beløb og knappen Eksportér">
           </figure>
         </div>
-      </div>
+      </article>
 
-      <div class="pillar" id="del">
+      <article class="pillar-card" id="del">
         <div class="pillar-body">
-        <div class="pillar-num">3</div>
-        <h3>Del og giv adgang</h3>
-        <p>Du bestemmer, hvem der må se dine vagter. Lav en kode til din vognmand, og vælg selv periode, biler og vagttype. Du kan altid trække adgangen tilbage.</p>
-        <ul class="ticks">
-          <li>Kører du for flere vognmænd, ser hver kun vagterne i sin egen bil</li>
-          <li>Vælg taxa, flextrafik eller begge</li>
-          <li>Vognmanden kan kun se vagterne, ikke ændre dem</li>
-        </ul>
-      </div>
-      <figure class="phone">
-        <img src="img/app-del.jpeg" loading="lazy" alt="Skærmen Del adgang i TaxaBog, hvor man vælger periode, vagttyper og biler">
-      </figure>
-    </div>
+          <div class="pillar-meta"><span class="pill-step">03</span><span class="pillar-cat">Deling</span></div>
+          <h3>Del og giv adgang</h3>
+          <p>Du bestemmer, hvem der må se dine vagter. Lav en kode til din vognmand, og vælg selv periode, biler og vagttype. Du kan altid trække adgangen tilbage.</p>
+          <ul class="ticks">
+            <li>Kører du for flere vognmænd, ser hver kun vagterne i sin egen bil</li>
+            <li>Vælg taxa, flextrafik eller begge</li>
+            <li>Vognmanden kan kun se vagterne, ikke ændre dem</li>
+          </ul>
+        </div>
+        <figure class="phone">
+          <img src="img/app-del.jpeg" loading="lazy" alt="Skærmen Del adgang i TaxaBog, hvor man vælger periode, vagttyper og biler">
+        </figure>
+      </article>
 
-    <div class="pillar" id="analyse">
+      <article class="pillar-card" id="analyse">
         <div class="pillar-body">
-        <div class="pillar-num">4</div>
-        <h3>Analyse</h3>
-        <p>Se hvad du tjener: hvad du har kørt ind, hvor meget der var kontant, og hvad en vagt giver i snit.</p>
-        <ul class="ticks">
-          <li>Denne måned, uge for uge, eller vælg selv perioden</li>
-          <li>Indkørt, snit pr. vagt, kontant, antal vagter, besatte km og distance</li>
-          <li>Søjlediagram for hver vagt med gennemsnitslinje, også i fuld skærm</li>
-          <li>Taxa og Flextrafik hver for sig, og filtrér på bil</li>
-        </ul>
-      </div>
-      <figure class="phone">
-        <img src="img/app-analyse.jpeg" loading="lazy" alt="Analytics i TaxaBog med indkørt, antal vagter, kontant, distance og et søjlediagram pr. vagt">
-      </figure>
+          <div class="pillar-meta"><span class="pill-step">04</span><span class="pillar-cat">Indtjening</span></div>
+          <h3>Analyse</h3>
+          <p>Se hvad du tjener: hvad du har kørt ind, hvor meget der var kontant, og hvad en vagt giver i snit.</p>
+          <ul class="ticks">
+            <li>Denne måned, uge for uge, eller vælg selv perioden</li>
+            <li>Indkørt, snit pr. vagt, kontant, antal vagter, besatte km og distance</li>
+            <li>Søjlediagram for hver vagt med gennemsnitslinje, også i fuld skærm</li>
+            <li>Taxa og Flextrafik hver for sig, og filtrér på bil</li>
+          </ul>
+        </div>
+        <figure class="phone">
+          <img src="img/app-analyse.jpeg" loading="lazy" alt="Analytics i TaxaBog med indkørt, antal vagter, kontant, distance og et søjlediagram pr. vagt">
+        </figure>
+      </article>
     </div>
   </div>
 </section>
@@ -304,7 +311,7 @@
           <li><div><strong>Få rapporten</strong><span>Lav en PDF med alle stop, tider, adresser og stopnumre, klar til at vedlægge, hvis vognafregningen ikke stemmer. Du kan også dele dine vagter med din vognmand via Del adgang.</span></div></li>
         </ol>
       </div>
-      <div class="rules">
+      <div class="rules rules-card">
         <table>
           <caption>Sådan sorteres dine stop</caption>
           <tbody>
@@ -318,22 +325,52 @@
       <p class="k-note">GPS bruges kun, mens vagten kører, og appen beder kun om adgang “Mens appen er i brug”. Når du slutter vagten, stopper GPS’en.</p>
     </div>
   </div>
-  <div class="wrap report">
-    <div class="report-text">
-      <h3>Rapporten med stopnumre</h3>
-      <p>Én side med hele vagten: arbejdstid, pause og ventetid øverst, og under det hvert stop med tid, varighed, stopnummer og adresse. Klar til at sende til vognmanden eller vedlægge vognafregningen.</p>
-      <ul class="ticks">
-        <li>Stopnummeret står ved det stop, hvor du ventede</li>
-        <li>Ventetiden lægges sammen for dig</li>
-        <li>Lav PDF’en direkte fra vagten i appen</li>
-      </ul>
-      <a class="report-link" href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener">Åbn eksemplet (PDF) →</a>
+  <div class="wrap">
+    <div class="report report-card">
+      <div class="report-text">
+        <p class="eyebrow">PDF-rapport</p>
+        <h3>Rapporten med stopnumre</h3>
+        <p>Én side med hele vagten: arbejdstid, pause og ventetid øverst, og under det hvert stop med tid, varighed, stopnummer og adresse. Klar til at sende til vognmanden eller vedlægge vognafregningen.</p>
+        <ul class="ticks">
+          <li>Stopnummeret står ved det stop, hvor du ventede</li>
+          <li>Ventetiden lægges sammen for dig</li>
+          <li>Lav PDF’en direkte fra vagten i appen</li>
+        </ul>
+        <a class="btn btn-primary report-btn" href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener">Åbn eksemplet (PDF) →</a>
+      </div>
+      <figure class="report-paper">
+        <a href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener">
+          <img src="img/rapport-eksempel.webp" width="1000" height="1181" loading="lazy" alt="Eksempel på en Kørselstid-rapport fra TaxaBog med ni stop, stopnumre fra 65 til 81 og 52 minutters ventetid">
+        </a>
+      </figure>
     </div>
-    <figure class="report-paper">
-      <a href="img/eksempel-koerselstid.pdf" target="_blank" rel="noopener">
-        <img src="img/rapport-eksempel.webp" width="1000" height="1181" loading="lazy" alt="Eksempel på en Kørselstid-rapport fra TaxaBog med ni stop, stopnumre fra 65 til 81 og 52 minutters ventetid">
-      </a>
-    </figure>
+  </div>
+</section>
+
+<section id="om-kontakt">
+  <div class="wrap">
+    <p class="eyebrow">Bag TaxaBog</p>
+    <h2>Bygget i branchen. Altid til at få fat i.</h2>
+    <p class="section-intro">Vi kører selv i flextrafik og bygger TaxaBog til hverdagen bag rattet.</p>
+    <div class="info-cards">
+      <div class="info-card" id="om">
+        <p class="eyebrow">Om os</p>
+        <h3>Om EgyDan ApS</h3>
+        <p>EgyDan ApS er et dansk vognmandsfirma i flextrafik. Vi kører selv, og TaxaBog er bygget ud fra det, vi oplever bag rattet: lange ventetider ved adresserne, vagtregnskab på papir og vognafregninger, der er svære at kontrollere.</p>
+        <p>Målet er enkelt. Førere og vognmænd skal kunne se, hvad der faktisk blev kørt, og have dokumentationen klar, når tallene ikke stemmer.</p>
+        <p class="info-note">EgyDan ApS · CVR 46090942 · Danmark</p>
+      </div>
+      <div class="info-card is-featured" id="kontakt">
+        <p class="eyebrow">Kontakt</p>
+        <h3>Har du spørgsmål?</h3>
+        <p>TaxaBog kan hentes i <a href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">App Store</a> til iPhone og i <a href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">Google Play</a> til Android. Har du spørgsmål? Skriv til os.</p>
+        <div class="contact-mail"><a href="mailto:support@taxabog.dk">support@taxabog.dk</a></div>
+        <div class="contact-actions"><a class="btn-whatsapp" href="https://wa.me/4560554508?text=Hej%20TaxaBog%2C%20jeg%20har%20et%20sp%C3%B8rgsm%C3%A5l%20om%20appen." target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+          Skriv til os på WhatsApp</a></div>
+        <p class="contact-cvr">EgyDan ApS · CVR 46090942</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -358,31 +395,7 @@
         </a>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="om">
-  <div class="wrap"><div class="about">
-    <p class="eyebrow">Om os</p>
-    <h2>Om EgyDan ApS</h2>
-    <p>EgyDan ApS er et dansk vognmandsfirma i flextrafik. Vi kører selv, og TaxaBog er bygget ud fra
-    det, vi oplever bag rattet: lange ventetider ved adresserne, vagtregnskab på papir og vognafregninger,
-    der er svære at kontrollere.</p>
-    <p>Målet er enkelt. Førere og vognmænd skal kunne se, hvad der faktisk blev kørt, og have
-    dokumentationen klar, når tallene ikke stemmer.</p>
-  </div></div>
-</section>
-
-<section id="kontakt">
-  <div class="wrap contact-grid">
-    <p class="eyebrow">Kontakt</p>
-    <h2>Har du spørgsmål?</h2>
-    <p>TaxaBog kan hentes i <a href="https://apps.apple.com/app/taxabog-vagtregnskab/id6820941732" target="_blank" rel="noopener">App Store</a> til iPhone og i <a href="https://play.google.com/store/apps/details?id=dk.egydan.taxabog" target="_blank" rel="noopener">Google Play</a> til Android. Har du spørgsmål? Skriv til os.</p>
-    <div class="contact-mail"><a href="mailto:support@taxabog.dk">support@taxabog.dk</a></div>
-    <div><a class="btn-whatsapp" href="https://wa.me/4560554508?text=Hej%20TaxaBog%2C%20jeg%20har%20et%20sp%C3%B8rgsm%C3%A5l%20om%20appen." target="_blank" rel="noopener">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
-      Skriv til os på WhatsApp</a></div>
-    <p>EgyDan ApS · CVR 46090942</p>
+    <p class="demo-foot">Mangler du en chauffør eller en ekstra vagt? <a href="job/">Se TaxaBog Job →</a></p>
   </div>
 </section>
 </main>
