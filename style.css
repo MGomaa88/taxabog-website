@@ -1057,6 +1057,85 @@ section .eyebrow { margin-bottom: 12px; }
   border-radius: 14px;
 }
 
+/* TaxaBog Job spotlight card on main page */
+.job-spotlight {
+  background: var(--surface);
+  border: 1px solid var(--signal);
+  border-radius: 18px;
+  padding: 36px 38px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 36px 44px;
+  align-items: center;
+}
+.job-spotlight-body .hero-badge { margin-bottom: 14px; }
+.job-spotlight-body h2 { margin-bottom: 12px; }
+.job-spotlight-intro { color: var(--muted); margin: 0 0 20px; max-width: 38em; }
+.job-spotlight-body .ticks { gap: 10px; }
+.job-spotlight-actions { margin-top: 24px; gap: 12px 18px; }
+.job-spotlight-free { font-size: var(--step--1); color: var(--muted); font-weight: 600; }
+
+.job-spotlight-panel {
+  background: #0f1b2d;
+  background-image:
+    radial-gradient(70% 60% at 95% 0%, rgba(255, 184, 0, 0.16), transparent 70%),
+    radial-gradient(60% 70% at 0% 100%, rgba(70, 120, 200, 0.22), transparent 70%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+  color: #eef0f2;
+  box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.55);
+}
+.job-panel-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.job-panel-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  color: #b7c0cc;
+}
+.job-panel-tab.is-active { background: var(--signal); color: var(--signal-ink); }
+.job-panel-count {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  line-height: 1;
+  background: rgba(17, 19, 22, 0.16);
+  color: var(--signal-ink);
+  padding: 3px 6px;
+  border-radius: 999px;
+}
+.job-panel-item {
+  background: rgba(8, 13, 22, 0.65);
+  border: 1px solid rgba(255, 207, 77, 0.28);
+  border-radius: 12px;
+  padding: 13px 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.job-panel-item strong { display: block; color: #fff; font-size: 0.95rem; }
+.job-panel-item span:last-child { display: block; color: #b7c0cc; font-size: 0.84rem; }
+.job-panel-note {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #b7c0cc;
+  text-align: center;
+}
+
 /* Kørselstid: card-framed rules table and report showcase */
 .rules-card {
   background: var(--surface);
@@ -1140,6 +1219,7 @@ section .eyebrow { margin-bottom: 12px; }
   .scan-band { padding-block: 56px; }
   .scan-band .scan-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .scan-band .scan-card { padding: 20px; }
+  .job-spotlight { grid-template-columns: minmax(0, 1fr); padding: 24px 20px; gap: 24px; }
   .info-cards { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .info-card { padding: 22px 20px; }
   .report-card { padding: 24px 20px; margin-top: 40px; }
