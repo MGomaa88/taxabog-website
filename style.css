@@ -852,12 +852,71 @@ section .eyebrow { margin-bottom: 12px; }
 /* ---------- 2026-11-25 main page aligned with TaxaBog Job style ---------- */
 
 /* Hero: 2-column pitch + media, matching .job-hero */
+.nav .nav-job {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+}
+.nav-badge {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--signal);
+  color: var(--signal-ink);
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1.1;
+}
 .main-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 48px;
   align-items: center;
   padding-block: 16px 8px;
+}
+.hero-job-link {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--signal);
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: var(--step--1);
+  color: var(--ink);
+  box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.35);
+}
+.hero-job-pill {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--signal);
+  color: var(--signal-ink);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.hero-job-text { color: var(--muted); line-height: 1.35; }
+.hero-job-text strong { color: var(--ink); }
+.hero-job-arrow {
+  flex: none;
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--ink);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-job-link { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .hero-job-link:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -18px rgba(0, 0, 0, 0.45); }
+  .hero-job-arrow { transition: transform 0.2s ease; }
+  .hero-job-link:hover .hero-job-arrow { transform: translateX(3px); }
 }
 .hero-badge {
   display: inline-flex;
